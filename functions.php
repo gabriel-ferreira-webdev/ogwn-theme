@@ -17,12 +17,19 @@ function include_jquery(){
 }
 add_action('wp_enqueue_scripts', 'include_jquery');
 
+// function loaddotdotdot(){
+//   wp_register_script('dotdotdot', get_template_directory_uri() . '/js/dotdotdot.js', '', 1, true);
+//   wp_enqueue_script('dotdotdot');
+// }
+// add_action('wp_enqueue_scripts', 'loaddotdotdot');
+
 function loadjs(){
   wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
   wp_enqueue_script('customjs');
 }
-
 add_action('wp_enqueue_scripts', 'loadjs');
+
+
 
 add_theme_support('menus');
 add_theme_support('post-thumbnails');

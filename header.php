@@ -34,7 +34,9 @@
     )
   ) ?>
  <div id="mobile-menu-icon">
-    <img src="https://localhost/ogwnw/wp-content/uploads/2020/07/Hamburger-Button.png" alt="">
+   <figure></figure>
+   <figure></figure>
+   <figure></figure>
   </div>
   <!-- <a href="#" id="top-subscribe">Subscribe</a> -->
 
