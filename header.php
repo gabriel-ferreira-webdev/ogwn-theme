@@ -25,7 +25,7 @@
 
 
 <?php echo get_theme_mod( 'my_site_logo_id' );?>
-
+<div id="menu-top-bg"></div>
 <?php wp_nav_menu (
 
     array(
@@ -33,11 +33,14 @@
       'menu_class' => 'navigation'
     )
   ) ?>
- <div id="mobile-menu-icon">
-   <figure></figure>
-   <figure></figure>
-   <figure></figure>
-  </div>
+  <input type="checkbox" name="mobilemenu" id="menuCb">
+  <div class="fade"></div>
+  <button id="mobile-menu-icon" class="hamburger hamburger--squeeze" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+
   <!-- <a href="#" id="top-subscribe">Subscribe</a> -->
 
 
