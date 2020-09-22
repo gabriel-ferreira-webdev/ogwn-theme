@@ -84,7 +84,7 @@ header a:link{
 
 .title-img{
   margin:0 auto 0 2%;
-  background-image:url("https://localhost/ogwnw/wp-content/uploads/2020/07/One-Great-Work-Network-800x37.png");
+  background-image:url("img/logo-text-mb.png");
   background-repeat: no-repeat;
   background-position:  center;
   background-size: contain;
@@ -140,6 +140,7 @@ header a:link{
   width:100%;
 } */
 #livefeed-featured-section{
+  padding:24px 0 24px 0;
     border-top:1px solid white;
     background-image: linear-gradient(#0c0c0c, #212121 2%,#212121 97%, #0c0c0c 100%);
 }
@@ -584,7 +585,7 @@ z-index: 99;
     margin:0 0 0 12px;
     width:353px;
     height:80px;
-    background-image:url("https://dev003.ogwn.net/wp-content/uploads/2020/08/Logo-Text.png");
+    background-image:url("img/logo-text.png");
     background-position: left;
   }
 
@@ -707,7 +708,7 @@ footer .container{
     width:80%;
   }
   .live-player-container{
-    width:70%;
+    width:69%;
   }
   #featured-container{
     margin:0 0 0 2.5%;
@@ -772,7 +773,7 @@ footer .container{
      width:706px;
      height:160px;
      margin-left:24px;
-    background-image:url("https://dev003.ogwn.net/wp-content/uploads/2020/08/Logo-Text.png");
+    background-image:url("img/logo-text-mb.png");
    }
    /* .author-list{
      max-width:50%;

@@ -32,7 +32,7 @@
 
  <div class="feed-posts featured-posts">
    <ul>
-     <?php $featured_id = 9; ?>
+     <?php $featured_id = 2; ?>
  <?php $catquery = new WP_Query( 'cat='.$featured_id.'&posts_per_page=6' ); ?>
  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
@@ -80,7 +80,7 @@
 
 
 
- <div class="feed-container container">
+ <!-- <div class="feed-container container">
 
 <div class="section-header">
   <h5>RECENT</h5>
@@ -128,7 +128,7 @@
 
 
 
-</div>
+</div> -->
 
 
   </div>
