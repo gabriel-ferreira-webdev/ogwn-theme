@@ -58,8 +58,8 @@
 
    <div class="feed-post-info featured-post-info">
 
-   <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-title-link featured-post-title-link"><span class="feed-post-title featured-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
-   <a class="feed-post-author-name featured-post-author-name" href="<?php get_the_author_link()?>"> <?php the_author() ?></a>
+   <a href="<?php the_permalink(); ?>" rel="bookmark" class="feed-post-title-link featured-post-title-link"><span class="feed-post-title featured-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
+   <a class="feed-post-author-name featured-post-author-name" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author();?></a>
 
    </div>
  </div>
