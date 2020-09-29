@@ -2,6 +2,10 @@ feed/*
 Theme Name: OGWN
 Author: Gabriel Ferreira
 */
+
+#menuCb{
+  display:none!important;
+}
 div {
   box-sizing: border-box;
 }
@@ -51,7 +55,8 @@ body{
   width:100%;
 }
 header{
-      background-image: linear-gradient(#100f26, #100f26 85%, #0c0c0c 100%);
+  background:#100f26;
+      /* background-image: linear-gradient(#100f26, #100f26 85%, #0c0c0c 100%); */
       padding:6px 0;
 }
 header a:link{
@@ -93,9 +98,71 @@ header a:link{
   height:100%;
 }
 
+/* MOBILE MENU */
+#menuCb,#menu-top-bg{
+  display:none;}
+@media (max-width:1017px) {
+#menu-top-bg{
+    position: fixed;
+    right:0;
+    top:0;
+    z-index: 99;
+    height:100%;
+    width:50%;
+    background:#1e1c44;
+  }
+  .fade{
+        display:inline-block;
+        position: fixed;
+        top:0;
+        left:0;
+    width:100%;
+    height:100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 98;
+    background:black;
+        transition:.5s
+  }
+  .fade-on{
+    pointer-events: all;
+    opacity: .7;
+  }
+header{
+  position: relative;
+}
 
 
-/* FRONT PAGE H */
+  .menu-top-menu-container{
+    display:none;
+    position: absolute;
+    z-index: 99;
+    right:0;
+  top:100%;
+    width:50%;
+    background:#1e1c44;
+  }
+  #menu-top-menu li:first-child{border-top:1px solid}
+  #menu-top-menu li{
+    border-bottom:1px solid white;
+
+  }
+    #menu-top-menu li a{
+          font-size:calc(12px + 6 * ((100vw - 320px) / 680));
+          padding:24px 5% 24px 5%;
+      margin:0;
+      display:inline-block;
+      width:90%;
+      height:100%;
+    }
+    .menu-icon-close{
+      position: relative;
+z-index: 99;
+    }
+}
+
+
+/* FRONT PAGE */
 .section-header{
   padding:12px 0;
   text-align: left;
@@ -193,7 +260,7 @@ height:100%;
 .feed-posts ul{
   text-align: left;
   display:flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   flex-wrap: wrap;
   padding:0;
 }
@@ -207,7 +274,6 @@ text-overflow: ellipsis;
 width:100%;
 padding:6px 0;
 }
-
 
 /* feed POST INFO */
 .feed-post-info-flex{
@@ -323,6 +389,10 @@ text-overflow: ellipsis;
 }
 
 /* CONTENT CREATORS */
+
+.biography{
+  display:none;
+}
 #content-creators-section {
 background-image:linear-gradient(#383e76, #151739 90%);
 }
@@ -425,6 +495,185 @@ text-align: center;
   margin:0;
 
 }
+
+
+
+
+
+
+
+/* AUTHOR BLOG PAGE */
+
+
+.author-page-header{
+      text-align: center;
+  padding-bottom:20px;
+}
+
+.author-donate a{
+  text-transform: uppercase;
+  display:inline-block;
+  padding:1em;
+  font-weight:bold;
+  background:green;
+  border-radius:3px;
+  margin:12px 0 0;
+}
+.author-donate a:hover{
+  background:darkgreen;
+}
+.author-page-header-social{
+  margin:12px 0;
+}
+.author-page-header-social a{
+display:inline-block;
+width:24px;
+height:24px;
+margin:0 12px;
+}
+.author-page-header-social a:first-child{
+margin-left:0;
+}
+.author-page-header-social a:last-child{
+  margin-right:0;
+}
+.author-social svg {
+  fill:white;
+}
+.author-social svg:hover {
+  fill:darkgray;
+}
+.author-page-header-desc{
+  margin-top:12px;
+}
+
+
+
+
+
+@media (min-width:481px) {
+  .author-page-header .container{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .author-page-header-profile{
+    width:25%;
+  }
+  .author-page-header-side{
+    width:75%;
+        text-align: left;
+  }
+  .author-donate a{
+    margin:12px 0 0;
+        width:50%;
+  }
+  .author-page-header-social {
+    margin-top:0;
+  }
+}
+
+
+/* .author-page-header .container{
+  height:200px;
+  text-align: center;
+  vertical-align: middle;
+}
+.author-page-header-profile{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width:100%;
+  height:100%;
+}
+.author-page-header-profile .avatar{
+  height:50%;
+  width:auto;
+}
+.author-page-header-profile a{
+  text-transform: uppercase;
+  display:inline-block;
+  padding:5% 0;
+  font-weight:bold;
+  background:green;
+  border-radius:3px;
+}
+.author-page-header-profile a:hover{
+  background:darkgreen;
+}
+.author-page-header-profile h1, .author-page-header-profile a {
+  width:100%;
+}
+.author-page-header-profile nav{
+  width:50%;
+} */
+
+/* .author-page-header{
+  background-image: url('img/ogwn-flag.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-color:black;
+    background-position: top;
+    background-size: 404px;
+  width:100%;
+  height:250px;
+  position: relative;
+  text-align: center;
+}
+.author-page-header .avatar{
+  position: absolute;
+  top:120px;
+  left:0;
+  right:0;
+  margin:auto;
+  width:75px;
+  height:auto;
+}
+.author-page-header h1{
+  position: absolute;
+  bottom:0;
+  width:90%;
+  font-size:calc(11px + 6 * ((100vw - 320px) / 680));
+}
+.feed-post-info-author{
+  width:100%;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MEDIA QUERIES */
 
 @media (min-width:768px) {
@@ -445,6 +694,9 @@ text-align: center;
   }
 .feed-post{
   width:49%;
+}
+.feed-post:nth-child(2n){
+  margin-left:2%;
 }
 .feed-post-thumb{
   width:100%;
@@ -490,83 +742,27 @@ height:100%;
 
 }
 
+
+
+
+
+
+
+
+
 @media (min-width:872px) {
 
    .feed-post{
     width:32%;
     font-size:calc(8px + 6 * ((100vw - 320px) / 680));
+      margin-left:2%;
   }
-
-
-}
-#menuCb{
-  display:none;
-}
-#menu-top-bg{
-  display:none;}
-@media (max-width:1017px) {
-  /* .body-hide{
-    height:100vh;
-    overflow:hidden;
-  } */
-#menu-top-bg{
-    position: fixed;
-    right:0;
-    top:0;
-    z-index: 99;
-    height:100%;
-    width:50%;
-    background:#1e1c44;
-  }
-  .fade{
-        display:inline-block;
-        position: fixed;
-        top:0;
-        left:0;
-    width:100%;
-    height:100%;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 98;
-    background:black;
-        transition:.5s
-  }
-  .fade-on{
-    pointer-events: all;
-    opacity: .7;
-  }
-header{
-  position: relative;
+  .feed-post:nth-child(3n+1){
+      margin-left:0;
 }
 
 
-  .menu-top-menu-container{
-    display:none;
-    position: absolute;
-    z-index: 99;
-    right:0;
-  top:100%;
-    width:50%;
-    background:#1e1c44;
-  }
-  #menu-top-menu li:first-child{border-top:1px solid}
-  #menu-top-menu li{
-    border-bottom:1px solid white;
 
-  }
-    #menu-top-menu li a{
-          font-size:calc(12px + 6 * ((100vw - 320px) / 680));
-          padding:24px 5% 24px 5%;
-      margin:0;
-      display:inline-block;
-      width:90%;
-      height:100%;
-    }
-    .menu-icon-close{
-      position: relative;
-z-index: 99;
-    }
-}
 @media (min-width:1017px) {
 
   #mobile-menu-icon{
@@ -696,17 +892,12 @@ footer .container{
 
 
 }
-@media (min-width:1919px) {
 
-
-
-
-}
 @media (min-width:1500px){
 
-  main .container, header .container{
+  /* main .container, header .container{
     width:80%;
-  }
+  } */
   .live-player-container{
     width:69%;
   }
@@ -773,7 +964,7 @@ footer .container{
      width:706px;
      height:160px;
      margin-left:24px;
-    background-image:url("img/logo-text-mb.png");
+    background-image:url("img/logo-text.png");
    }
    /* .author-list{
      max-width:50%;

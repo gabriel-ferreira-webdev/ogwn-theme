@@ -21,11 +21,6 @@ function include_jquery(){
 }
 add_action('wp_enqueue_scripts', 'include_jquery');
 
-// function loaddotdotdot(){
-//   wp_register_script('dotdotdot', get_template_directory_uri() . '/js/dotdotdot.js', '', 1, true);
-//   wp_enqueue_script('dotdotdot');
-// }
-// add_action('wp_enqueue_scripts', 'loaddotdotdot');
 
 function loadjs(){
   wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
@@ -71,4 +66,16 @@ function mytheme_customize_register( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
+
+
+// disable authorbox styles
+function disable_authorbox_styles() {
+
+ 	wp_deregister_style('author-bio-box-styles');
+
+ }
+ add_action('wp_enqueue_scripts', 'disable_authorbox_styles');
+
+
+
  ?>

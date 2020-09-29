@@ -1,4 +1,3 @@
-
 <?php get_header();?>
 
 <main>
@@ -141,7 +140,7 @@
   <h5>CONTENT CREATORS</h5>
 </div>
 
-<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true hiddenusers=1,2,5 show_biography=false]' ); ?>
+<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false hiddenusers=1,2,5]' ); ?>
 
 </div>
   </div>
