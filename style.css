@@ -25,6 +25,10 @@ div {
   font-family: "sourceSansPro-LightItalic";
   src: url("fonts/SourceSansPro-LightItalic.ttf");
 }
+@font-face {
+  font-family: "sourceSansPro-Italic";
+  src: url("fonts/SourceSansPro-Italic.ttf");
+}
 *{
 font-family: "sourceSansPro";
   color:white;
@@ -41,8 +45,16 @@ a:visited{
   font-family: "sourceSansPro-SemiBold";
 }
 
-
-body{
+#wpadminbar{
+  top:-46px;
+}
+body,html{
+  height:100%;
+}
+.page-wrap{
+  position: relative;
+  min-height:100%;
+  padding-bottom:750px;
   background:#100f27;
   margin:0;
 }
@@ -444,27 +456,19 @@ max-width:80%;
 box-shadow:0px 0px 3px white;
 }
 
-
-
 footer{
-  position:relative;
-  font-family: "sourceSansPro-SemiBold";
-  padding:24px 0 98px 0;
-  background:black;
+  position: absolute;
+  bottom:0;
   width:100%;
+
 }
 footer .container{
   height:100%;
-}
-#back-top{
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  position: absolute;
-  left:0;
-  right:0;
-  bottom:48px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  position:relative;
+  font-family: "sourceSansPro-SemiBold";
+height:750px;
+  background:black;
+  width:100%;
 }
 .footer-logo{
   display:inline-block;
@@ -472,7 +476,7 @@ footer .container{
   background-position: center;
   background-size: contain;
   width:100%;
-  padding-top:80%;
+  padding-top:300px;
   background-repeat:no-repeat;
 }
 #menu-footer-menu{
@@ -547,10 +551,48 @@ margin-left:0;
   margin-top:12px;
 }
 
-
-
-
-
+/* ARTICLE / SINGLE POST */
+.article-header{
+  margin-top:12px;
+}
+.article-header-author{
+  padding:12px 0;
+  margin:12px 0;
+  border-top:1px solid gray;
+  border-bottom:1px solid gray;
+}
+.article-header .avatar{
+  display:inline-block;
+  width:auto;
+height:3em;
+}
+.article-header h2 {
+    font-family: "arvo";
+    font-size:calc(24px + 6 * ((100vw - 320px) / 680));
+}
+.article-header-info{
+  vertical-align: top;
+    display:inline-block;
+    margin-left:12px;
+  width:70%;
+  max-width:70%;
+  position: relative;
+  height:3em;
+}
+.article-header-info h3{
+    font-family: "sourceSansPro-Italic";
+      font-size:calc(20px + 6 * ((100vw - 320px) / 680));
+}
+.article-date{
+      font-family: "sourceSansPro-LightItalic";
+        font-size:calc(14px + 6 * ((100vw - 320px) / 680));
+        color:#ffffff;
+  position: absolute;
+  bottom:0;
+}
+.article-content{
+  padding:12px 0 48px;
+}
 @media (min-width:481px) {
   .author-page-header .container{
     display:flex;
@@ -675,8 +717,13 @@ margin-left:0;
 
 
 /* MEDIA QUERIES */
-
+@media (min-width:601px) {
+  #wpadminbar{
+    top:0;
+  }
+}
 @media (min-width:768px) {
+
   .section-header{
     text-align:center;
   }
@@ -844,21 +891,24 @@ height:100%;
 .live-title{
   margin-top:12px;
 }
-footer{
-  padding:12px 0 60px 0;
-}
 #back-top{
       font-size: calc(5px + 6 * ((100vw - 320px) / 680));
   bottom:24px;
 }
+.page-wrap{
+  padding-bottom:200px;
+}
+
 footer .container{
+  padding:0 10%;
+  height:200px;
   display:flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .menu-footer-menu-container{
-    margin-left:10%;
+  width:50%;
 }
 #menu-footer-menu{
     -webkit-columns: 200px 2; /* Chrome, Safari, Opera */
@@ -877,10 +927,22 @@ footer .container{
 #menu-footer-menu li a:link{
       font-size: calc(6px + 6 * ((100vw - 320px) / 680));}
 .footer-logo{
-  padding-top:20%;
+padding:0;
+height:100%;
   margin:0;
-  width:25%;
+  width:50%;
 }
+
+
+/* ARTICLE / SINGLE POST */
+
+.article-header-info h3{
+          font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+}
+.article-date{
+          font-size: calc(6px + 6 * ((100vw - 320px) / 680));
+}
+
 
 }
 @media (min-width:1408px) {
@@ -938,6 +1000,13 @@ footer .container{
 }
 
 }
+ @media (min-width:1900px) {
+/* ARTICLE / SINGLE POST */
+.article-header-author .avatar{
+  height:4.5em;
+}
+.article-header-info{height:4em;}
+}
  @media (min-width:3500px) {
    header{
      padding:12px 0;
@@ -970,9 +1039,7 @@ footer .container{
      max-width:50%;
    } */
 
-.footer-logo{
-  padding-top:15%;
-}
+
  .menu-footer-menu-container{
    margin-left:2.5%;
  }
@@ -981,6 +1048,16 @@ footer .container{
        -moz-columns: 500px 2; /* Firefox */
        columns: 500px 2;
    }
+
+
+
+   /* ARTICLE / SINGLE POST */
+   .article-header-author .avatar{
+     height:7em;
+   }
+   .article-header-info{
+     margin-left:24px;
+     height:6em;}
  }
 /* @media (min-width:3800px) {
   .livefeed-featured{

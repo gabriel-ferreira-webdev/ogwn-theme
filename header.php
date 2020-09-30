@@ -6,9 +6,9 @@
     <title></title>
     <?php wp_head();?>
   </head>
+
   <body <?php body_class();?>>
-
-
+<div class="page-wrap">
 <header>
   <div class="container">
 

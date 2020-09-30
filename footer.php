@@ -1,5 +1,6 @@
 <?php wp_footer();?>
-<footer>
+
+<footer class="site-footer">
   <div class="container">
     <?php wp_nav_menu( array( 'theme_location' => 'footer-menu'));?>
 
@@ -8,8 +9,8 @@
 
 
   </div>
-    <a href="#" id="back-top">Back to top &uarr;</a>
 </footer>
 
+</div>
 </body>
 </html>
