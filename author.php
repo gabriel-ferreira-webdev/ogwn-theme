@@ -13,12 +13,10 @@ $author_name = get_author_name();
 <main>
 
 
-<div class="author-page-header">
+<div class="author-page-header section">
   <div class="container">
-
  <div class="author-page-header-profile">
   <?php echo get_avatar($author_id); ?>
-    <h1><?php the_author();     ?></h1>
     <nav class="author-donate">
       <a href="#">DONATE TO <?php the_author();?></a>
     </nav>
@@ -26,6 +24,17 @@ $author_name = get_author_name();
 
 
 <div class="author-page-header-side">
+    <h2><?php the_author();?></h2>
+<div class="author-page-header-desc">
+  <?php
+the_author_description();
+?>
+</div>
+<input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">
+<nav id="author-page-read-more">
+  Read more...
+</nav>
+<a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
 
 <div class="author-page-header-social">
   <?php
@@ -53,23 +62,12 @@ $author_name = get_author_name();
 ?>
 </div>
 
-<a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
-
-
-<div class="author-page-header-desc">
-  <?php
-the_author_description();
-?>
 </div>
-
-</div>
-
-
 
   </div>
 </div>
 
-
+<div class="section author-page-posts">
 <div class="container">
 
 
@@ -106,5 +104,7 @@ the_author_description();
 </ul>
 </div>
 </div>
+</div>
+
 </main>
 <?php get_footer();?>

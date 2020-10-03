@@ -36,6 +36,9 @@
 //      new Dotdotdot( wrapper, options );
 //   });
 // }
+
+
+// MOBILE MENU
 var menu = document.querySelector( ".menu-top-menu-container");
 var menuIcon = document.querySelector( "#mobile-menu-icon");
 var menuCb = document.querySelector( "#menuCb");
@@ -87,3 +90,25 @@ fade.addEventListener("click", function(){
 })
 console.log(menu);
 console.log(menuIcon);
+
+
+// AUTHOR PROFILE DESCRIPTION SEE MORE...
+
+var authorDesc = document.querySelector(".author-page-header-desc");
+var authorReadMore = document.querySelector("#author-page-read-more");
+var authorReadMoreCb = document.querySelector("#author-page-read-more-cb");
+    authorReadMoreCb.checked = false;
+authorReadMore.addEventListener("click", function(){
+  if (authorReadMoreCb.checked) {
+
+    authorReadMoreCb.checked = false;
+        console.log(authorReadMoreCb.checked);
+                authorDesc.classList.remove("author-page-header-desc-open");
+                authorReadMore.innerHTML = "Read more...";
+  }else{
+        authorReadMoreCb.checked = true;
+            console.log(authorReadMoreCb.checked);
+    authorDesc.classList.add("author-page-header-desc-open");
+    authorReadMore.innerHTML = "Read less...";
+  }
+})

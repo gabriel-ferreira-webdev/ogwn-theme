@@ -1,4 +1,3 @@
-
 <?php get_header();?>
 
 <main>
@@ -32,7 +31,7 @@
 
  <div class="feed-posts featured-posts">
    <ul>
-     <?php $featured_id = 2; ?>
+     <?php $featured_id = 9; ?>
  <?php $catquery = new WP_Query( 'cat='.$featured_id.'&posts_per_page=6' ); ?>
  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
@@ -54,7 +53,7 @@
 </div>
  <div class="feed-post-info-flex featured-post-info-flex">
 
-   <a class="feed-post-avatar featured-post-avatar" href="<?php get_the_author_link() ?>"> <?php echo get_avatar( get_the_author_email(), '60' );?></a>
+   <a class="feed-post-avatar featured-post-avatar" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"> <?php echo get_avatar( get_the_author_email(), '60' );?></a>
 
    <div class="feed-post-info featured-post-info">
 
@@ -80,7 +79,7 @@
 
 
 
- <!-- <div class="feed-container container">
+  <div class="feed-container container">
 
 <div class="section-header">
   <h5>RECENT</h5>
@@ -128,7 +127,7 @@
 
 
 
-</div> -->
+</div>
 
 
   </div>
@@ -141,7 +140,7 @@
   <h5>CONTENT CREATORS</h5>
 </div>
 
-<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true hiddenusers=1,2,5 show_biography=false]' ); ?>
+<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true hiddenusers=1,2,5,6 show_biography=false]' ); ?>
 
 </div>
   </div>
