@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 
-  <div class="section section-gray">
+  <div class="section" id="content-creators-section">
   <div class="container">
 <div class="section-header">
 

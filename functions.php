@@ -1,11 +1,6 @@
 <?php
 function load_stylesheets()
 {
-
-  wp_register_style('reset', get_template_directory_uri() . '/css/reset.css', array(), false, 'all');
-  wp_enqueue_style('reset');
-  wp_register_style('hamburgers', get_template_directory_uri() . '/css/hamburgers.css', array(), false, 'all');
-  wp_enqueue_style('hamburgers');
   wp_register_style('stylesheet', get_template_directory_uri() . '/style.css', array(), false, 'all');
   wp_enqueue_style('stylesheet');
 
