@@ -51,7 +51,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -839,7 +838,7 @@ footer .container{
       text-align: left;
     }
     .author-donate a{
-      margin:48px 0 0;
+      margin:24px 0 0;
       width:100%;
       padding:12px 0;
         font-size:calc(12px + 6 * ((100vw - 320px) / 680));
@@ -851,7 +850,7 @@ footer .container{
       margin-top:0;
     }
   .author-url, #author-page-read-more, .author-page-header-desc{
-      font-size:calc(11px + 6 * ((100vw - 320px) / 680));
+      font-size:calc(5px + 6 * ((100vw - 320px) / 680));
   }
 }
   @media (min-width:872px) {
@@ -1000,7 +999,7 @@ footer .container{
       height:100%;
       margin:0;
       width:50%;
-			padding-top:38%;
+			padding-top:25%;
     }
 
 

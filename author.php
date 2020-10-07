@@ -16,9 +16,9 @@ $author_name = get_author_name();
 <div class="author-page-header section">
   <div class="container">
  <div class="author-page-header-profile">
-  <?php echo get_avatar($author_id); ?>
+  <?php echo get_avatar($author_id, 300); ?>
     <nav class="author-donate">
-      <a href="#">DONATE TO <?php the_author();?></a>
+      <a href="donate">DONATE TO<br><?php the_author();?></a>
     </nav>
 </div>
 
@@ -76,17 +76,7 @@ the_author_description();
 <?php if (have_posts()) : while(have_posts()) : the_post();?>
   <li class="feed-post">
 
-    <div class="feed-category">
-      <?php
-      $categories = get_the_category();
-      if ($categories[0]->term_id == $featured_id) {
-    $cat = $categories[1];
-  }else{
-    $cat = $categories[0];
-  }
-      ?>
-<a href="<?php echo get_category_link($cat->term_id);?>"> <?php echo $cat->name;  ?> </a>
-    </div>
+
 <div class="feed-post-thumb">
   <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
   </div>
