@@ -419,7 +419,6 @@ header a:link, header a:visited{
 
 .feed-post{
   font-size:calc(14px + 6 * ((100vw - 320px) / 680));
-  position: relative;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -459,8 +458,7 @@ header a:link, header a:visited{
 
 /* POST CATEGORY */
 .feed-category{
-  position: absolute;
-  left:0;
+	display:inline-block;
   background-color: rgba(0,0,0,0.5);
   color:white;
   padding:3px 10px;
