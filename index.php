@@ -35,9 +35,9 @@
  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
  <li class="feed-post featured-post">
-   
+
      <?php
-$categories = get_categories('exclude=1,3');
+$categories = get_categories('exclude=1');
   for ($i=0; $i < sizeof($categories); $i++) {
          ?>
    <div class="feed-category">

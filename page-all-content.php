@@ -18,7 +18,7 @@
   <li class="feed-post">
 
     <?php
-$categories = get_categories('exclude=1,3');
+$categories = get_categories('exclude=1');
  for ($i=0; $i < sizeof($categories); $i++) {
         ?>
   <div class="feed-category">
@@ -26,7 +26,7 @@ $categories = get_categories('exclude=1,3');
        </div>
              <?php  }  ?>
 
-             
+
  <div class="feed-post-thumb">
   <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
  </div>
