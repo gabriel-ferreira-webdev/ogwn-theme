@@ -71,6 +71,9 @@ function disable_authorbox_styles() {
  }
  add_action('wp_enqueue_scripts', 'disable_authorbox_styles');
 
-
+ // function wpd_exclude_uncategorized( $query ) {
+ //         $query->set( 'category__not_in', array( 1 ) );
+ // }
+ // add_action( 'pre_get_posts', 'wpd_exclude_uncategorized' );
 
  ?>

@@ -16,7 +16,7 @@
  <h5>NOW PLAYING:</h5>
 </div> -->
 <div class="iframe-container">
-<iframe id="twitch-iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=dev003.ogwn.nett&parent=dev003.ogwn.net" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
+<iframe id="twitch-iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=ogwn.net&parent=ogwn.net" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
 </div>
   <!-- <div class="live-title">
     <a href="#">Now Playing:  What On Earth Is Happening</a>
@@ -31,7 +31,7 @@
 
  <div class="feed-posts featured-posts">
    <ul>
-     <?php $featured_id = 10; ?>
+     <?php $featured_id = 2; ?>
  <?php $catquery = new WP_Query( 'category_name=featured&posts_per_page=6' ); ?>
  <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
@@ -92,7 +92,7 @@
   <h5>CONTENT CREATORS</h5>
 </div>
 
-<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false roles="editor"]' ); ?>
+<?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false roles="content_creator"]' ); ?>
 
 </div>
   </div>

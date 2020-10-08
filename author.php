@@ -73,7 +73,8 @@ the_author_description();
 
 <div class="feed-posts">
   <ul>
-<?php if (have_posts()) : while(have_posts()) : the_post();?>
+    <?php $catquery = new WP_Query( 'category_name=' . $author_name ); ?>
+    <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
   <li class="feed-post">
 
 
@@ -90,7 +91,7 @@ the_author_description();
     </div>
   </div>
   </li>
-<?php endwhile; endif;?>
+<?php endwhile; wp_reset_postdata();?>
 </ul>
 </div>
 </div>

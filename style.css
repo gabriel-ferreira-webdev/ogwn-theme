@@ -618,6 +618,8 @@ footer .container{
 }
 
 .author-page-header-profile .avatar{
+	border:3px solid white;
+	margin-top:10px;
   width:50%;
   height:auto;
 }
