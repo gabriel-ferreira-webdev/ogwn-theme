@@ -10,11 +10,12 @@ $email = get_the_author_meta('email', $author_id);
 $author_url = get_the_author_meta('user_url', $author_id);
 $author_name = get_author_name();
 ?>
+
 <main>
-
-
 <div class="author-page-header section">
   <div class="container">
+
+    <!-- Author Page Header Profile -->
  <div class="author-page-header-profile">
   <?php echo get_avatar($author_id, 300); ?>
     <nav class="author-donate">
@@ -22,7 +23,7 @@ $author_name = get_author_name();
     </nav>
 </div>
 
-
+<!-- Author Page Header Bio -->
 <div class="author-page-header-side">
     <h2><?php the_author();?></h2>
 <div class="author-page-header-desc">
@@ -35,7 +36,7 @@ the_author_description();
   Read more...
 </nav>
 <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
-
+<!-- Author Page Header Social Icons -->
 <div class="author-page-header-social">
   <?php
         if(!empty($email)) {
@@ -60,42 +61,57 @@ the_author_description();
   echo '<a title="Follow '.$author_name.' on Facebook" href="'.$facebook.'" class="author-social author-social-facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>';
 }
 ?>
-</div>
+</div> <!-- Author Page Header Social Icons -->
 
-</div>
+</div> <!-- Author Page Header Profile -->
 
-  </div>
-</div>
+</div>  <!-- Container Author Page Header-->
+</div>  <!-- Section Author Page Header-->
 
 <div class="section author-page-posts">
 <div class="container">
 
-
+<!-- Posts Feed -->
 <div class="feed-posts">
   <ul>
     <?php $catquery = new WP_Query( 'category_name=' . $author_name ); ?>
     <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
-  <li class="feed-post">
+      <?php $author_id = get_the_author_meta('ID'); ?>
 
+      <!-- Post -->
+      <li class="feed-post featured-post">
+        <!-- post categories -->
+        <div class="feed-category">
+          <?php
+          $categories = get_the_category();
+          $cat = $categories[0];
+          ?>
+          <a href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
+        </div>
+        <!-- post thumbnail -->
+        <div class="feed-post-thumb ">
+          <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
+        </div>
 
-<div class="feed-post-thumb">
-  <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
-  </div>
-  <div class="feed-post-info-flex">
+        <!-- post info -->
+        <div class="feed-post-info-flex">
 
+          <a class="feed-post-avatar" href="<?php echo get_author_posts_url($author_id); ?>"> <?php echo get_avatar( get_the_author_email(), '60' );?></a>
 
-    <div class="feed-post-info feed-post-info-author">
+          <div class="feed-post-info">
+            <a href="<?php the_permalink(); ?>" rel="bookmark" class="feed-post-title-link"><span class="feed-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
+            <a class="feed-post-author-name" href="<?php echo get_author_posts_url($author_id); ?>"><?php the_author();?></a>
+          </div>
 
-    <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-title-link"><span class="feed-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
+        </div>
 
-    </div>
-  </div>
-  </li>
+      </li>
 <?php endwhile; wp_reset_postdata();?>
 </ul>
-</div>
-</div>
-</div>
+</div>  <!-- Posts feed -->
+
+</div>  <!-- Container Author Page Posts -->
+</div>  <!-- Section Author Page Posts -->
 
 </main>
 <?php get_footer();?>
