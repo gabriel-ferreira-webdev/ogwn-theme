@@ -77,7 +77,7 @@
       <h5>CONTENT CREATORS</h5>
     </div>
 
-    <?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false ]' ); ?>
+    <?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false roles=content_creator]' ); ?>
 
   </div>
 </div>

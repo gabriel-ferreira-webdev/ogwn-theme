@@ -14,7 +14,7 @@
   <?php if (have_posts()) : while(have_posts()) : the_post();?>
     <?php $author_id = get_the_author_meta('ID'); ?>
 
-      <li class="feed-post featured-post">
+      <li class="feed-post">
         <!-- post categories -->
         <div class="feed-category">
           <?php

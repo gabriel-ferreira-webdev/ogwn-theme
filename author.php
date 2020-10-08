@@ -79,7 +79,7 @@ the_author_description();
       <?php $author_id = get_the_author_meta('ID'); ?>
 
       <!-- Post -->
-      <li class="feed-post featured-post">
+      <li class="feed-post">
         <!-- post categories -->
         <div class="feed-category">
           <?php
