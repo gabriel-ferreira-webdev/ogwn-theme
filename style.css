@@ -275,7 +275,7 @@ header a:link, header a:visited{
 
 #menuCb,#menu-top-bg{display:none;}
 
-@media (max-width:1017px) {
+@media (max-width:1016px) {
   header{
     position: relative;
   }
@@ -344,11 +344,11 @@ header a:link, header a:visited{
   padding:12px 0 24px 0;
 }
 
-.section-header{
+.section-header, .feed-container h2{
   padding:12px 0;
   text-align: left;
 }
-.section-header h5{
+.section-header h5, .feed-container h2{
   font-size:calc(22px + 6 * ((100vw - 320px) / 680));
   font-family:"arvo"
 }
@@ -769,7 +769,7 @@ footer .container{
     } */
   }
   @media (min-width:768px) {
-    .section-header{
+    .section-header, .feed-container h2{
       text-align:center;
     }
     .container{
@@ -927,7 +927,6 @@ footer .container{
     }
     #menu-top-menu li{
       display:inline-block;
-      margin:0 5%;
     }
 
 
@@ -1049,15 +1048,13 @@ footer .container{
       padding:0;
     }
 
-    #header-featured{
+    #header-featured, .feed-container h2{
       padding:0;
+			text-align: left;
     }
     #livefeed-featured{
       display:flex;
       flex-wrap:wrap;
-    }
-    #header-featured{
-      text-align: left;
     }
 
     /* FEATURED POSTS FEED DESKTOP */
@@ -1103,7 +1100,7 @@ footer .container{
     /* 5K */
 
 
-    .section-header{
+    .section-header, .feed-container h2{
       padding:48px;
     }
 
@@ -1145,9 +1142,6 @@ footer .container{
 
     /* FRONT PAGE PLAYER AND FEATURED VIDEOS 5K */
 
-    #header-featured{
-      margin-bottom:12px;
-    }
 
     /* ARTICLE / SINGLE POST */
     .article-header-author .avatar{
