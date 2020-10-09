@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<main>
+<main  role=”main”>
 
   <div class="section section-gray" id="livefeed-featured-section">
     <div id="livefeed-featured" class="container">

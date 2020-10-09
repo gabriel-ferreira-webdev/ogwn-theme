@@ -27,7 +27,7 @@ global $post;
         <!-- post info -->
         <div class="feed-post-info-flex featured-post-info-flex">
 
-          <a class="feed-post-avatar featured-post-avatar" href="<?php echo get_author_posts_url($author_id); ?>"> <?php echo get_avatar( get_the_author_email(), '60' );?></a>
+          <a class="feed-post-avatar featured-post-avatar" href="<?php echo get_author_posts_url($author_id); ?>"> <?php echo get_avatar( $author_id, '60' );?></a>
 
           <div class="feed-post-info featured-post-info">
             <a href="<?php the_permalink(); ?>" rel="bookmark" class="feed-post-title-link"><span class="feed-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
