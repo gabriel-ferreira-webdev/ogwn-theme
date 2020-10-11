@@ -664,7 +664,7 @@ footer .container{
 .author-page-header-desc{
   max-height:200px;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   line-height: 1.4rem;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -681,8 +681,9 @@ footer .container{
   display:none;
 }
 #author-page-read-more{
-  margin-bottom:24px;
-  cursor:pointer;}
+  margin-bottom: 0.5rem;
+  cursor:pointer;
+}
 
   #author-page-read-more:hover{
     opacity:.9;
