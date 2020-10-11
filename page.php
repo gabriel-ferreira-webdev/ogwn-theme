@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-
+<main>
   <div class="section section-gray">
   <div class="container">
 <div class="section-header">
@@ -20,4 +20,5 @@
 
 </div>
   </div>
+</main>
 <?php get_footer();?>

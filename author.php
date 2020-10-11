@@ -13,31 +13,31 @@ $author_name = get_author_name();
 <main>
 
 
-<div class="author-page-header section">
-  <div class="container">
- <div class="author-page-header-profile">
-  <?php echo get_avatar($author_id, 300); ?>
-    <nav class="author-donate">
-      <a href="donate">DONATE TO<br><?php the_author();?></a>
-    </nav>
-</div>
+  <div class="author-page-header section">
+    <div class="container">
+      <div class="author-page-header-profile">
+        <?php echo get_avatar($author_id, 300); ?>
+        <nav class="author-donate">
+          <a href="donate">DONATE TO<br><?php the_author();?></a>
+        </nav>
+      </div>
 
 
-<div class="author-page-header-side">
-    <h2><?php the_author();?></h2>
-<div class="author-page-header-desc">
-  <?php
+      <div class="author-page-header-side">
+        <h2><?php the_author();?></h2>
+        <div class="author-page-header-desc">
+          <?php
 the_author_description();
 ?>
-</div>
-<input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">
-<nav id="author-page-read-more">
-  Read more...
-</nav>
-<a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
+        </div>
+        <!--<input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">-->
+        <nav id="author-page-read-more">
+          Read more...
+        </nav>
+        <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
 
-<div class="author-page-header-social">
-  <?php
+        <div class="author-page-header-social">
+          <?php
         if(!empty($email)) {
   echo '<a title="Contact '.$author_name.' via Email" href="mailto:'.$email.'" class="author-social author-social-email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a>';
   }
@@ -60,42 +60,45 @@ the_author_description();
   echo '<a title="Follow '.$author_name.' on Facebook" href="'.$facebook.'" class="author-social author-social-facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>';
 }
 ?>
-</div>
+        </div>
 
-</div>
-
-  </div>
-</div>
-
-<div class="section author-page-posts">
-<div class="container">
-
-
-<div class="feed-posts">
-  <ul>
-    <?php $catquery = new WP_Query( 'category_name=' . $author_name ); ?>
-    <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
-  <li class="feed-post">
-
-
-<div class="feed-post-thumb">
-  <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
-  </div>
-  <div class="feed-post-info-flex">
-
-
-    <div class="feed-post-info feed-post-info-author">
-
-    <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-title-link"><span class="feed-post-title" title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
+      </div>
 
     </div>
   </div>
-  </li>
-<?php endwhile; wp_reset_postdata();?>
-</ul>
-</div>
-</div>
-</div>
+
+  <div class="section author-page-posts">
+    <div class="container">
+
+
+      <div class="feed-posts">
+        <ul>
+          <?php $catquery = new WP_Query( 'category_name=' . $author_name ); ?>
+          <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
+          <li class="feed-post">
+
+
+            <div class="feed-post-thumb">
+              <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a"
+                style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
+            </div>
+            <div class="feed-post-info-flex">
+
+
+              <div class="feed-post-info feed-post-info-author">
+
+                <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-title-link"><span
+                    class="feed-post-title"
+                    title="<?php echo get_the_title(); ?>"><?php echo get_the_title();?></span></a>
+
+              </div>
+            </div>
+          </li>
+          <?php endwhile; wp_reset_postdata();?>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </main>
 <?php get_footer();?>

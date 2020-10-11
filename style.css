@@ -77,6 +77,10 @@ table {
 	border-spacing: 0;
 }
 
+main .container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 
 /* -------------------------------------------------------------------------- */
 
@@ -203,10 +207,7 @@ a:link, a:visited{
 
 /*	3. Helper Classes
 /* -------------------------------------------------------------------------- */
-.container{
-  /*margin:auto;*/
-  width:100%;
-}
+
 
 
 
@@ -594,7 +595,7 @@ footer .container{
   columns: 75px 2;
 }
 #menu-footer-menu a:link{
-  font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+  font-size: calc(12px + 6 * ((100vw - 320px) / 680));
 }
 #menu-footer-menu ul{
   width:100%;
@@ -646,13 +647,14 @@ footer .container{
 
 .author-page-header h2{
   margin:24px 0 0;
-  /*font-size:calc(24px + 6 * ((100vw - 320px) / 680));*/
+  font-size:calc(18px + 6 * ((100vw - 320px) / 680));
 }
 
 .author-page-header-desc{
   max-height:200px;
   overflow: hidden;
   margin:24px 0;
+  line-height: 1.4rem;
 }
 .author-page-header-desc-open{
   max-height:none;
@@ -777,9 +779,6 @@ footer .container{
   @media (min-width:768px) {
     .section-header{
       text-align:center;
-    }
-    .container{
-      width:90%;
     }
 
 
@@ -986,11 +985,11 @@ footer .container{
       padding-bottom:300px;
     } */
     footer .container{
-			padding:25px 0;
-       display:flex;
+			/*padding:25px 0;*/
+      display:flex;
       flex-direction: row-reverse;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     .menu-footer-menu-container{
@@ -1010,9 +1009,10 @@ footer .container{
     }
     #menu-footer-menu li{
       padding:8px 0;
+      text-align: left;
     }
     #menu-footer-menu li a:link{
-      font-size: calc(6px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(10px + 6 * ((100vw - 320px) / 680));
     }
 
     .footer-logo{
@@ -1154,9 +1154,9 @@ footer .container{
     .menu-top-menu-container{
       max-width:1600px;
     }
-    .menu-footer-menu-container{
+    /*.menu-footer-menu-container{
       margin-left:2.5%;
-    }
+    }*/
 
 
 

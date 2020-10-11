@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-
+<main>
   <div class="section section-gray">
   <div class="container">
 <div class="section-header">
@@ -53,4 +53,5 @@ $categories = get_categories('exclude=1');
 
 </div>
   </div>
+</main>
 <?php get_footer();?>
