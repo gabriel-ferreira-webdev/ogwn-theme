@@ -23,11 +23,10 @@
       $categories = get_the_category();
       for ($i=0; $i < count($categories); $i++) {
       $cat = $categories[$i];
-      $rl_category_color = rl_color($cat->term_id);
       ?>
       <div class="feed-category">
 
-        <a  title="<?php echo $cat->name;?>" href="<?php echo get_category_link($cat->term_id);?>" style="color:<?php echo $rl_category_color?>;"><?php echo $cat->name;?></a>
+        <a  title="<?php echo $cat->name;?>" href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
       </div>
       <?php  } ?>
             </div>
