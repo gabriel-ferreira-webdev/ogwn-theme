@@ -467,12 +467,16 @@ header a:link, header a:visited{
 }
 
 /* POSTS FEED POST CATEGORY */
+.feed-categories{
+	width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
 .feed-category{
-  position: absolute;
-  left:0;
-  background-color: rgba(0,0,0,0.5);
+	display:inline;
   color:white;
-  padding:3px 10px;
+  padding:12px 1em 12px 0;
 }
 .feed-post-thumb{
   width:39%;
