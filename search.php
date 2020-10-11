@@ -21,12 +21,16 @@ $search = new WP_Query( $search_query );
       <h5>Search: <?php echo get_search_query(); ?></h5>
     </div>
 
+    <!-- Posts feed -->
+<div class="feed-posts">
+  <ul>
 
 <?php
 global $wp_query;
 $total_results = $wp_query->found_posts;
 ?>
 <?php while($wp_query->have_posts()) : $wp_query->the_post(); ?>
+
   <?php $author_id = get_the_author_meta('ID'); ?>
 
       <li class="feed-post">
@@ -58,6 +62,8 @@ $total_results = $wp_query->found_posts;
       </li>
 
   <?php endwhile;wp_reset_postdata();?>
+</ul>
+</div>    <!-- Posts feed -->
   </div>
 </div>
 

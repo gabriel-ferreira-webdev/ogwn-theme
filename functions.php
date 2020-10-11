@@ -109,9 +109,14 @@ function disable_authorbox_styles() {
  }
  add_action('wp_enqueue_scripts', 'disable_authorbox_styles');
 
- function wpd_exclude_uncategorized( $query ) {
-         $query->set( 'category__not_in', array( 1 ) );
+ function search_filter($query) {
+     if ( ! is_admin() && $query->is_main_query() ) {
+         if ( $query->is_search ) {
+             $query->set( 'post_type', 'post' );
+         }
+     }
  }
- add_action( 'pre_get_posts', 'wpd_exclude_uncategorized' );
+ add_action( 'pre_get_posts', 'search_filter' );
+
 
  ?>

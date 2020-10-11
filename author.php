@@ -80,14 +80,6 @@ the_author_description();
 
       <!-- Post -->
       <li class="feed-post">
-        <!-- post categories -->
-        <div class="feed-category">
-          <?php
-          $categories = get_the_category();
-          $cat = $categories[0];
-          ?>
-          <a href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
-        </div>
         <!-- post thumbnail -->
         <div class="feed-post-thumb ">
           <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
