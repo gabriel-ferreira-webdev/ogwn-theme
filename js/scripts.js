@@ -104,11 +104,11 @@ authorReadMore.addEventListener("click", function(){
     authorReadMoreCb.checked = false;
         console.log(authorReadMoreCb.checked);
                 authorDesc.classList.remove("author-page-header-desc-open");
-                authorReadMore.innerHTML = "Read more...";
+                authorReadMore.innerHTML = "Read more";
   }else{
         authorReadMoreCb.checked = true;
             console.log(authorReadMoreCb.checked);
     authorDesc.classList.add("author-page-header-desc-open");
-    authorReadMore.innerHTML = "Read less...";
+    authorReadMore.innerHTML = "Read less";
   }
 })

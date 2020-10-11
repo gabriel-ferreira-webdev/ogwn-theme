@@ -30,10 +30,11 @@ $author_name = get_author_name();
 the_author_description();
 ?>
         </div>
-        <!--<input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">-->
-        <nav id="author-page-read-more">
-          Read more...
+        <input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">
+        <nav id="author-page-read-more" class="float-right">
+          Read more
         </nav>
+        <div class="clr" />
         <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
 
         <div class="author-page-header-social">

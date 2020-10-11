@@ -1,4 +1,5 @@
 <?php get_header();?>
+<main>
 <div class="section section-gray">
 
 
@@ -45,5 +46,5 @@
 
 </div>
 </div>
-
+</main>
 <?php get_footer();?>
