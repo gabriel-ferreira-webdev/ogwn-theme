@@ -990,6 +990,7 @@ footer .container {
 
   .author-page-header-profile {
     /*width: 300px;*/
+    padding-top: 0.5rem;
   }
 
   .author-page-header-profile .avatar {
@@ -1001,6 +1002,7 @@ footer .container {
     /*width: 85%;*/
     text-align: left;
     margin-left: 1.5rem;
+    padding-top: 0.5rem;
   }
 
   .author-donate a {
