@@ -85,6 +85,10 @@ main .container {
   margin-right: 2rem;
 }
 
+.float-left {
+  float: left;
+}
+
 .float-right {
   float: right;
 }
@@ -366,7 +370,7 @@ header a:hover {
     display: block;
     color: white;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 1.6em;
     padding: 10px;
     top: 0;
   }
@@ -397,7 +401,7 @@ header a:hover {
     width: 200px;
     position: absolute;
     right: 0;
-    top: 67px;
+    top: 68px;
     background: #1e1c44;
     /*top: 170px;*/
   }
@@ -421,6 +425,10 @@ header a:hover {
     /*display: inline-block;
     width: 90%;
     height: 100%;*/
+  }
+
+  #menu-top-menu > li a:link, #menu-top-menu > li a:visited {
+    font-size: 1.5rem;
   }
 
   #menu-top-menu .search {
