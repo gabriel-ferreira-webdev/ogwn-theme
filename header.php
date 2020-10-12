@@ -12,7 +12,6 @@
 <div class="page-wrap">
 <header>
 
-  <div class="container">
   <div class="header-flex">
 
       <?php if ( function_exists( 'the_custom_logo' ) ) {
@@ -41,5 +40,4 @@
 </button>
 
     </div>
-      </div>
 </header>

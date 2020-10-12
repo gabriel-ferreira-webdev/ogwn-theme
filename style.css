@@ -209,7 +209,7 @@ a:link, a:visited{
 /* -------------------------------------------------------------------------- */
 .container{
   margin:auto;
-  width:95%;
+  width:calc(100% - 12px);
 }
 
 
@@ -545,22 +545,6 @@ text-overflow: ellipsis;
 }
 
 
-/* ABOUT PAGE */
-
-
-.section-about{
-	min-height:150px;
-	background-image:url("img/logo-big.png");
-	background-repeat:no-repeat;
-	background-position: center;
-}
-.section-about .container{
-	padding-bottom:1em;
-background-color:rgba(0, 0, 0, 0.95);
-}
-.section-about .section-header{
-	text-align: left;
-}
 /* -------------------------------------------------------------------------- */
 
 /*	7. Site Footer
@@ -792,39 +776,19 @@ max-width: 100%;
 
 
 
-  @media (min-width:601px) {
-    /* repositions wordpress back-end menu on desktop (sticky footer) */
-    /* #wpadminbar{
-      top:0;
-    } */
-  }
-  @media (min-width:768px) {
-    .section-header, .feed-container h2{
+  @media (min-width:600px) {
+		/* POSTS FEED  */
+		.section-header, .feed-container h2{
       text-align:center;
     }
-    .container{
-      width:90%;
-    }
-
-
-    /* FRONT PAGE */
-
-
-
-    /* FRONT PAGE PLAYER AND FEATURED VIDEOS */
-
-    .live-title, #header-live{
-      width:auto;
-      margin:0;
-    }
-
-    /* POSTS FEED  */
-
     .feed-post{
-      width:49%;
+      width:31.33%;
     }
-    .feed-post:nth-child(2n){
-      margin-left:2%;
+		.feed-post{
+			margin-left:2%;
+		}
+    .feed-post:nth-child(3n+1),.feed-post:nth-child(1){
+      margin-left:0;
     }
     .feed-post-thumb{
       width:100%;
@@ -845,6 +809,23 @@ max-width: 100%;
     .feed-post-info{
       width:75%;
     }
+
+  }
+  @media (min-width:768px) {
+
+
+
+    /* FRONT PAGE */
+
+
+
+    /* FRONT PAGE PLAYER AND FEATURED VIDEOS */
+
+    .live-title, #header-live{
+      width:auto;
+      margin:0;
+    }
+
 
 
 
@@ -895,17 +876,6 @@ max-width: 100%;
     /* FRONT PAGE */
 
 
-
-    /* POSTS FEED  */
-
-    .feed-post{
-      width:32%;
-      font-size:calc(8px + 6 * ((100vw - 320px) / 680));
-      margin-left:2%;
-    }
-    .feed-post:nth-child(3n+1){
-      margin-left:0;
-    }
 
 		/* AUTHOR PAGE */
 
@@ -992,6 +962,18 @@ max-width: 100%;
       margin-top:12px;
     }
 
+		    /* POSTS FEED  */
+
+		    .feed-post{
+		      width:18%;
+		      font-size:calc(8px + 6 * ((100vw - 320px) / 680));
+		    }
+				.feed-post,.feed-post:nth-child(3n+1){
+		      margin-left:2.33%;
+		    }
+				.feed-post:first-child, .feed-post:nth-child(5n+1){
+					margin:0;
+				}
     /* CONTENT CREATORS DESKTOP */
 
     .author-list .user{
