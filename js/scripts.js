@@ -37,7 +37,7 @@
 //   });
 // }
 
-
+/*
 // MOBILE MENU
 var menu = document.querySelector( ".menu-top-menu-container");
 var menuIcon = document.querySelector( "#mobile-menu-icon");
@@ -90,7 +90,7 @@ fade.addEventListener("click", function(){
 })
 console.log(menu);
 console.log(menuIcon);
-
+*/
 
 // AUTHOR PROFILE DESCRIPTION SEE MORE...
 
@@ -104,11 +104,11 @@ authorReadMore.addEventListener("click", function(){
     authorReadMoreCb.checked = false;
         console.log(authorReadMoreCb.checked);
                 authorDesc.classList.remove("author-page-header-desc-open");
-                authorReadMore.innerHTML = "Read more...";
+                authorReadMore.innerHTML = "Read more";
   }else{
         authorReadMoreCb.checked = true;
             console.log(authorReadMoreCb.checked);
     authorDesc.classList.add("author-page-header-desc-open");
-    authorReadMore.innerHTML = "Read less...";
+    authorReadMore.innerHTML = "Read less";
   }
 })

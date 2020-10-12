@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>One Great Work Network <?php wp_title('-');?></title>
-    <?php wp_head();?>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Great Work Network <?php wp_title('-');?></title>
+  <?php wp_head();?>
+</head>
+<body <?php body_class();?>>
+  <!-- page wrap sticky footer -->
+  <div class="page-wrap">
+    <header>
+      <div class="header-flex">
+        <?php if ( function_exists( 'the_custom_logo' ) ) {
+         the_custom_logo();
+        } ?>
 
-  <body <?php body_class();?>>
-    <!-- page wrap sticky footer -->
-<div class="page-wrap">
-<header>
+        <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
 
-  <div class="header-flex">
+        <?php echo get_theme_mod( 'my_site_logo_id' );?>
 
-      <?php if ( function_exists( 'the_custom_logo' ) ) {
-       the_custom_logo();
-      } ?>
+        <nav id="hamnav">
+          <!-- [THE HAMBURGER] -->
+          <input type="checkbox" id="hammy" name="hammy">
+            <label for="hammy">&#9776;</label>
+          </input>
 
-  <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
-
-<?php echo get_theme_mod( 'my_site_logo_id' );?>
-
-<div id="menu-top-bg"></div>
-
-<?php wp_nav_menu (
-    array(
-      'theme_location' => 'top-menu',
-      'menu_class' => 'navigation'
-    )
-  ) ?>
-
-  <input type="checkbox" name="mobilemenu" id="menuCb">
-  <div class="fade"></div>
-  <button id="mobile-menu-icon" class="hamburger hamburger--squeeze" type="button">
-  <span class="hamburger-box">
-  <span class="hamburger-inner"></span>
-  </span>
-</button>
-
-    </div>
-</header>
+          <!-- [MENU ITEMS] -->
+          <div id="hamitems">
+            <?php wp_nav_menu (
+              array(
+                'theme_location' => 'top-menu',
+                'menu_class' => 'navigation'
+              )
+            ) ?>
+          </div>
+        </nav>
+      </div>
+    </header>
