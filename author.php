@@ -11,7 +11,7 @@ $author_url = get_the_author_meta('user_url', $author_id);
 $author_name = get_author_name();
 ?>
 
-<main>
+<main id="author-page">
   <div class="author-page-header section">
     <div class="container side-by-side">
 
@@ -26,7 +26,7 @@ $author_name = get_author_name();
       <!-- Author Page Header Bio -->
       <div class="author-page-header-side">
         <h2><?php the_author();?></h2>
-        
+
         <div class="author-page-header-desc">
           <?php
             the_author_description();
@@ -39,7 +39,7 @@ $author_name = get_author_name();
             Read more
           </nav>
         </div>
-        <div class="clr" />
+        <div class="clr"></div>
 
         <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
         <!-- Author Page Header Social Icons -->

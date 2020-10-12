@@ -747,6 +747,14 @@ footer .container {
 /*	8. Author Page
 /* -------------------------------------------------------------------------- */
 /* AUTHOR PAGE INFORMATION  */
+#author-page .section {
+  padding-top: 0;
+}
+
+#author-page .feed-post {
+  padding-top: 1.2rem;
+}
+
 .author-page-header {
   background-image: linear-gradient(#383e76, #151739 90%);
   border-bottom: 1px solid white;
