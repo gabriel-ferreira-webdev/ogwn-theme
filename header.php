@@ -11,13 +11,15 @@
   <div class="page-wrap">
     <header>
       <div class="header-flex">
-        <?php if ( function_exists( 'the_custom_logo' ) ) {
-         the_custom_logo();
-        } ?>
+        <div>
+          <?php if ( function_exists( 'the_custom_logo' ) ) {
+           the_custom_logo();
+          } ?>
 
-        <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
+          <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
 
-        <?php echo get_theme_mod( 'my_site_logo_id' );?>
+          <?php echo get_theme_mod( 'my_site_logo_id' );?>
+        </div>
 
         <nav id="hamnav">
           <!-- [THE HAMBURGER] -->
