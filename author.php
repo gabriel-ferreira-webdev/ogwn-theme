@@ -1,5 +1,6 @@
 <?php get_header();?>
-<?php $author_id = get_the_author_meta('ID');
+<?php
+$author_id = get_the_author_meta('ID');
 $twitter  = get_the_author_meta('twitter', $author_id);
 $facebook = get_the_author_meta('facebook', $author_id);
 $googleplus = get_the_author_meta('googleplus', $author_id);
@@ -13,7 +14,7 @@ $author_name = get_author_name();
 
 <main id="author-page">
   <div class="author-page-header section">
-    <div class="container side-by-side">
+    <div class="container side-by-side reading-container">
 
       <!-- Author Page Header Profile -->
       <div class="author-page-header-profile">
@@ -25,19 +26,16 @@ $author_name = get_author_name();
 
       <!-- Author Page Header Bio -->
       <div class="author-page-header-side">
-        <h2><?php the_author();?></h2>
+        <h2><?php the_author(); ?></h2>
 
-        <div class="author-page-header-desc">
-          <?php
-            the_author_description();
-          ?>
+        <div id="more-less" class="author-page-header-desc">
+          <?php the_author_description(); ?>
         </div>
 
         <div class="float-right">
-          <input type="checkbox" name="author-page-read-more-cb" id="author-page-read-more-cb">
-          <nav id="author-page-read-more">
+          <button title="Read more/less" type="button" class="link-button" onclick="readMoreToggle()" id="button-more">
             Read more
-          </nav>
+          </button>
         </div>
         <div class="clr"></div>
 
@@ -115,6 +113,10 @@ $author_name = get_author_name();
 
     </div> <!-- Container Author Page Posts -->
   </div> <!-- Section Author Page Posts -->
-
 </main>
+<script>
+  window.onload = (event) => {
+    initAuthor();
+  };
+</script>
 <?php get_footer();?>

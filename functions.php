@@ -64,7 +64,6 @@ add_action( 'add_search_form', 'search_form' );
  *
  */
 function arphabet_widgets_init() {
-
 	register_sidebar( array(
 		'name'          => 'Home right sidebar',
 		'id'            => 'home_right_1',
@@ -107,18 +106,20 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 
 // disable authorbox styles
 function disable_authorbox_styles() {
-
  	wp_deregister_style('author-bio-box-styles');
 
  }
  add_action('wp_enqueue_scripts', 'disable_authorbox_styles');
 
- function search_filter($query) {
-     if ( ! is_admin() && $query->is_main_query() ) {
-         if ( $query->is_search ) {
-             $query->set( 'post_type', 'post' );
-         }
-     }
- }
- add_action( 'pre_get_posts', 'search_filter' );
- ?>
+function search_filter($query) {
+  if ( ! is_admin() && $query->is_main_query() ) {
+    if ( $query->is_search ) {
+       $query->set( 'post_type', 'post' );
+    }
+  }
+}
+add_action( 'pre_get_posts', 'search_filter' );
+
+// allow HTML in author bio for formatting
+remove_filter('pre_user_description', 'wp_filter_kses');
+?>
