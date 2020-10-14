@@ -1163,7 +1163,7 @@ footer .container {
     padding: 0;
     min-width: 275px;
     height: 66;
-    margin-left: 1rem;
+    margin-left: .5rem;
     background-image: url("img/logo-text.png");
     background-position: left;
     display: inline-block;
@@ -1439,7 +1439,7 @@ footer .container {
 
  .featured-post-avatar {
     display: none;
-  } 
+  }
 
 
 
