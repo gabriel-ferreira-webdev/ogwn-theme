@@ -21,7 +21,7 @@
 
         <nav id="hamnav">
           <!-- [THE HAMBURGER] -->
-          <input type="checkbox" id="hammy" name="hammy" onclick="hidePageOnMenuOpen(this)">
+          <input type="checkbox" id="hammy" name="hammy" onclick="noScrollOnMenuOpen(this)">
             <label for="hammy">&#9776;</label>
           </input>
 

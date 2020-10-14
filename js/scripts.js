@@ -119,7 +119,7 @@ function initAuthor() {
 };
 
 // Mobile menu
-function hidePageOnMenuOpen(checkbox) {
-  if (checkbox.checked) document.body.className = 'hidePageOnMenuOpen';
-  else document.body.className = '';
+function noScrollOnMenuOpen(checkbox) {
+  if (checkbox.checked) document.body.classList.add('noScrollOnMenuOpen');
+  else document.body.classList.remove('noScrollOnMenuOpen');
 }

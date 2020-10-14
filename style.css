@@ -476,7 +476,7 @@ header a:hover {
     margin-top: 0.2rem;
   }
 
-  .hidePageOnMenuOpen {
+  .noScrollOnMenuOpen {
     position: fixed;
     height: 100%;
   }
