@@ -119,7 +119,7 @@ function search_filter($query) {
   }
 }
 add_action( 'pre_get_posts', 'search_filter' );
-$caid = '1';
+$caid = '-1';
 function exclude_category( $query ) {
     global $caid;
     if ( $query->is_search) {
