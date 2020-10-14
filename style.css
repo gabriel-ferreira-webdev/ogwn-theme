@@ -794,7 +794,7 @@ footer .container {
 
 #menu-footer-menu a:link {
   /*font-size: calc(18px + 6 * ((100vw - 320px) / 680));*/
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 #menu-footer-menu ul {
@@ -803,10 +803,9 @@ footer .container {
 }
 
 #menu-footer-menu li {
+  margin:0 0 24px;
   text-align: center;
   width: 100%;
-  /*padding: 24px 0;*/
-  margin: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1249,8 +1248,7 @@ footer .container {
 
   /* CONTENT CREATORS DESKTOP */
   .author-list .user {
-    /*width: 16.6%;*/
-    width: 175px;
+    width: 300px;
   }
 
   .container .shortcode-author-avatars .author-list .user .name {
