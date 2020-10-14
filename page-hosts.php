@@ -1,5 +1,7 @@
 <?php get_header();?>
 
+<main>
+
 
 <div class="section" id="content-creators-section">
   <div class="container">
@@ -18,6 +20,6 @@
 
   </div>
 </div>
-
+</main>
 
 <?php get_footer();?>

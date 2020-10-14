@@ -13,6 +13,8 @@ $search = new WP_Query( $search_query );
 ?>
 <?php get_header();?>
 
+<main>
+
 
 <div class="section section-gray">
   <div class="container">
@@ -67,5 +69,5 @@ $total_results = $wp_query->found_posts;
   </div>
 </div>
 
-
+</main>
 <?php get_footer();?>

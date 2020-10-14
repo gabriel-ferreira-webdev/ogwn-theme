@@ -1,5 +1,5 @@
 /*
-Theme Name: OGWN
+Theme Name: OGWN-Kris-1012
 Author: OGWN Team
 */
 /*--------------------------------------------------------------
@@ -81,8 +81,8 @@ blockquote::after {
 }
 
 main .container {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  width:calc(100% - 2rem);
+  margin:auto;
 }
 
 .float-left {
@@ -121,9 +121,6 @@ main .container {
   /*display: block;*/
 }
 
-#searchform {
-  margin-right: 1rem;
-}
 
 #search {
   font-size: 1rem;
@@ -321,6 +318,10 @@ header {
   padding: 6px 0;
   white-space: nowrap;
 }
+header .container{
+  width:calc(100% - 12px);
+  margin:0 auto;
+}
 
 header a:link, header a:visited {
   color: White;
@@ -344,7 +345,6 @@ header a:hover {
 .custom-logo-link {
   /*width: 6%;*/
   /*min-width: 42px;*/
-  margin-left: 0.5rem;
   max-height: 66px !important;
   display: inline-block;
 }
@@ -395,12 +395,11 @@ header a:hover {
       opacity: .7;
     }
   */
-  #hamnav {
-
-  }
 
   /* Show Hamburger Icon */
   #hamnav label {
+    position: relative;
+    z-index: 999;
     display: block;
     color: white;
     font-style: normal;
@@ -409,19 +408,18 @@ header a:hover {
     top: 0;
   }
 
-  /* Break down menu items into vertical */
-  #hamitems li > * {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    /*border-top: 1px solid #333;*/
-  }
 
   /* Toggle Show/Hide Menu */
-  #hamitems {
-    display: none;
-  }
-
+  #hamitems{display:none;
+    float:right;
+    position: fixed;
+    right:0;
+    top:0;
+    z-index: 99;
+    height:100%;
+    width:50%;
+    background:#1e1c44;
+}
   #hamnav input[type=checkbox]:checked ~ #hamitems {
     display: block;
   }
@@ -429,42 +427,40 @@ header a:hover {
   #hamnav input[type=checkbox]:checked + label {
     opacity: 0.8;
   }
-
-  .menu-top-menu-container {
-    display: block;
-    width: 200px;
-    position: absolute;
-    right: 0;
-    top: 68px;
-    background: #1e1c44;
-    /*top: 170px;*/
+    #hamnav input[type=checkbox]:checked .page-wrap{
+    max-height: calc(100% - 32px);
+position: absolute;
+width: 100%;
+overflow: hidden;
   }
 
-  .menu-top-menu-container {
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
+.menu-top-menu-container{
+  position: absolute;
+  z-index: 99;
+  right:0;
+  top:124px;
+  width:100%;
+  background:#1e1c44;
+  text-align: right;
   }
+@media (min-width:783px){
+  .menu-top-menu-container{
+    top:110px;
+  }
+}
 
   .menu-top-menu-container > #menu-top-menu {
     list-style: none;
   }
 
   .menu-top-menu-container > #menu-top-menu > li {
-    width: 200px;
+    border-top:1px solid white;
+    padding:20px 0;
+  }
+  .menu-top-menu-container > #menu-top-menu > li a{
+    margin-right:12px;
   }
 
-  #menu-top-menu > li:first-child {
-    border-top: 1px solid white;
-  }
-
-  #menu-top-menu > li > * {
-    /*font-size: calc(12px + 6 * ((100vw - 320px) / 680));*/
-    padding: 0.2rem 0.5rem;
-    margin: 0;
-    /*display: inline-block;
-    width: 90%;
-    height: 100%;*/
-  }
 
   #menu-top-menu > li:last-child {
     margin-bottom: 0.3rem;
@@ -484,12 +480,7 @@ header a:hover {
     margin-top: 0.2rem;
   }
 
-  .author-page-header-profile .avatar {
-    border: 3px solid white;
-    margin-top: 10px;
-    width: 50%;
-    height: 50%;
-  }
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -902,6 +893,12 @@ footer .container {
   background-image: linear-gradient(#0c0c0c, #212121 2%, #212121 97%, #0c0c0c 100%);
 }
 
+.author-page-header-profile .avatar {
+  border: 3px solid white;
+  margin-top: 10px;
+  width: 50%;
+  height: 50%;
+}
 /* -------------------------------------------------------------------------- */
 /*	9. Post: Archive
   /* -------------------------------------------------------------------------- */
@@ -1132,7 +1129,7 @@ footer .container {
     /*width:calc(90% - 420px);*/
     /*margin-left:auto;*/
     /*text-align: right;*/
-    margin-left: calc(24px + 12 * ((100vw - 320px) / 680));
+    margin-left: auto;
   }
 
   #hamnav {
@@ -1409,9 +1406,6 @@ footer .container {
 @media (min-width:3500px) {
 
   /* 5K */
-  .section-header, .feed-container h2 {
-    padding: 48px;
-  }
 
   /* HEADER 5K */
   header {
@@ -1429,12 +1423,7 @@ footer .container {
     margin: 0;*/
   }
 
-  .title-img {
-    width: 706px;
-    height: 160px;
-    margin-left: 24px;
-    background-image: url("img/logo-text.png");
-  }
+
 
   .menu-top-menu-container {
     max-width: 1600px;
