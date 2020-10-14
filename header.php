@@ -35,6 +35,6 @@
             ) ?>
           </div>
         </nav>
-                    <label for="hammy"class="fade"></label>
+      <label for="hammy"class="fade"></label>
       </div>
     </header>

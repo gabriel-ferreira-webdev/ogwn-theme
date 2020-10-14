@@ -444,7 +444,7 @@ header a:hover {
     top:0;
     z-index: 99;
     height:100%;
-    width:50%;
+    min-width:75%;
     background:#1e1c44;
   }
 
@@ -471,8 +471,15 @@ header a:hover {
     background:#1e1c44;
     text-align: right;
   }
-
+  @media (min-width:414px){
+  #hamitems{
+    min-width:50%;
+  }
+}
 @media (min-width:783px){
+  #hamitems{
+    min-width:30%;
+  }
   .menu-top-menu-container{
     top:110px;
   }
@@ -503,11 +510,13 @@ header a:hover {
     margin-top: 0.1rem;
     font-size: 1.1rem;
     padding: 0.2rem;
+    width:calc(100% - 60px);
   }
 
   #search-button {
     vertical-align: top;
     margin-top: 0.2rem;
+    margin-right: 12px;
   }
 
   .noScrollOnMenuOpen {
