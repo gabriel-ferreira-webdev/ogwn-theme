@@ -35,12 +35,12 @@ body {
   background: black;
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6,*/
 p,
 blockquote,
 address,
@@ -96,6 +96,25 @@ main .container {
 .clr {
   clear: both;
 }
+
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.link-button:hover {
+  opacity: 0.8;
+}
+
+.link-button:focus {
+  outline: none;
+  opacity: 1;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*	1. Hamburguer Menu
@@ -427,12 +446,9 @@ header a:hover {
   #hamnav input[type=checkbox]:checked + label {
     opacity: 0.8;
   }
-    #hamnav input[type=checkbox]:checked .page-wrap{
-    max-height: calc(100% - 32px);
-position: absolute;
-width: 100%;
-overflow: hidden;
-  }
+
+
+
 
 .menu-top-menu-container{
   position: absolute;
@@ -473,6 +489,8 @@ overflow: hidden;
   #search {
     vertical-align: top;
     margin-top: 0.1rem;
+    font-size: 1.1rem;
+    padding: 0.2rem;
   }
 
   #search-button {
@@ -672,7 +690,7 @@ overflow: hidden;
 .name {
   margin: 12px 0 24px 0;
   /*font-size: calc(18px + 6 * ((100vw - 320px) / 680)) !important;*/
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .author-list {
@@ -768,7 +786,7 @@ footer .container {
 
 #menu-footer-menu a:link {
   /*font-size: calc(18px + 6 * ((100vw - 320px) / 680));*/
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 #menu-footer-menu ul {
@@ -832,7 +850,7 @@ footer .container {
 }
 
 .author-page-header-desc {
-  max-height:200px;
+  max-height: 120px;
   margin: 0.8rem 0;
   line-height: 1.4rem;
   display: -webkit-box;
@@ -847,6 +865,7 @@ footer .container {
   max-height: none;
   overflow: visible;
   display: block;
+  text-align: left;
 }
 
 #author-page-read-more-cb {
@@ -931,7 +950,7 @@ footer .container {
 .article-header h2 {
   font-family: "arvo";
   /*font-size: calc(24px + 6 * ((100vw - 320px) / 680));*/
-  font-size: 24px;
+  /*font-size: 24px;*/
 }
 
 .article-header-info {
@@ -947,7 +966,8 @@ footer .container {
 .article-header-info h3 {
   font-family: "sourceSansPro-Italic";
   /*font-size: calc(20px + 6 * ((100vw - 320px) / 680));*/
-  font-size: 20px;
+  /*font-size: 20px;*/
+  margin: 0;
 }
 
 .article-date {
@@ -1098,6 +1118,12 @@ footer .container {
     display: none;
   }*/
 
+  main .reading-container {
+  	width: 950px;
+  	margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
   .custom-logo-link {
     width: auto;
     max-height: 66px !important;
@@ -1139,13 +1165,8 @@ footer .container {
   }
 
   #hamitems {
-    /*min-width: 500px;*/
-    /*display: flex;
-    justify-content: flex-start;
-    align-items: center;*/
     display:flex;
     flex-direction:row;
-    /*border:2px blue solid;*/
   }
 
   #menu-top-menu {
@@ -1235,12 +1256,13 @@ footer .container {
 
   /* CONTENT CREATORS DESKTOP */
   .author-list .user {
-    width: 16.6%;
+    /*width: 16.6%;*/
+    width: 175px;
   }
 
-  .name {
+  .container .shortcode-author-avatars .author-list .user .name {
     /*font-size: calc(11px + 6 * ((100vw - 320px) / 680)) !important;*/
-    font-size: 11px;
+    font-size: 1rem;
   }
 
   /* FOOTER DESKTOP */
@@ -1399,7 +1421,7 @@ footer .container {
   }
 
   .article-header-info {
-    height: 4em;
+    /*height: 4em;*/
   }
 }
 

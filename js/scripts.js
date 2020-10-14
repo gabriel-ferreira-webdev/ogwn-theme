@@ -93,22 +93,27 @@ console.log(menuIcon);
 */
 
 // AUTHOR PROFILE DESCRIPTION SEE MORE...
+function readMoreToggle() {
+  const less = 'author-page-header-desc';
+  const more = 'author-page-header-desc-open';
+  const elText = document.getElementById('more-less');
+  const elLink= document.getElementById('button-more');
 
-var authorDesc = document.querySelector(".author-page-header-desc");
-var authorReadMore = document.querySelector("#author-page-read-more");
-var authorReadMoreCb = document.querySelector("#author-page-read-more-cb");
-    authorReadMoreCb.checked = false;
-authorReadMore.addEventListener("click", function(){
-  if (authorReadMoreCb.checked) {
-
-    authorReadMoreCb.checked = false;
-        console.log(authorReadMoreCb.checked);
-                authorDesc.classList.remove("author-page-header-desc-open");
-                authorReadMore.innerHTML = "Read more";
-  }else{
-        authorReadMoreCb.checked = true;
-            console.log(authorReadMoreCb.checked);
-    authorDesc.classList.add("author-page-header-desc-open");
-    authorReadMore.innerHTML = "Read less";
+  if (elText.className === less){
+    elText.className = more;
+    elLink.innerHTML = 'Read less';
+  } else {
+    elText.className = less;
+    elLink.innerHTML = 'Read more';
   }
-})
+}
+
+function initAuthor() {
+  const el = document.getElementById('more-less');
+  const isOverflow = el.scrollHeight > el.clientHeight;
+
+  if (!isOverflow) {
+    const elToHide = document.getElementById('button-more');
+    elToHide.style.display = 'none';
+  }
+};
