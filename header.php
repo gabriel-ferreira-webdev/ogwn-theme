@@ -11,17 +11,17 @@
   <div class="page-wrap">
     <header>
       <div class="header-flex container">
-          <?php if ( function_exists( 'the_custom_logo' ) ) {
-           the_custom_logo();
-          } ?>
+        <?php if ( function_exists( 'the_custom_logo' ) ) {
+         the_custom_logo();
+        } ?>
 
-          <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
+        <a href="<?php echo get_home_url(); ?>" class="title-img"></a>
 
-          <?php echo get_theme_mod( 'my_site_logo_id' );?>
+        <?php echo get_theme_mod( 'my_site_logo_id' );?>
 
         <nav id="hamnav">
           <!-- [THE HAMBURGER] -->
-          <input type="checkbox" id="hammy" name="hammy">
+          <input type="checkbox" id="hammy" name="hammy" onclick="noScrollOnMenuOpen(this)">
             <label for="hammy">&#9776;</label>
           </input>
 

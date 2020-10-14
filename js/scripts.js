@@ -117,3 +117,9 @@ function initAuthor() {
     elToHide.style.display = 'none';
   }
 };
+
+// Mobile menu
+function noScrollOnMenuOpen(checkbox) {
+  if (checkbox.checked) document.body.classList.add('noScrollOnMenuOpen');
+  else document.body.classList.remove('noScrollOnMenuOpen');
+}
