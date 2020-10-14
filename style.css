@@ -409,10 +409,24 @@ header a:hover {
 /* -------------------------------------------------------------------------- */
 
 @media (max-width:1016px) {
+  .fade{
+    display:inline-block;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 98;
+    background:black;
+    transition:.5s
+  }
+
   /* Show Hamburger Icon */
   #hamnav label {
     position: relative;
-    z-index: 999;
+    z-index: 9999;
     display: block;
     color: white;
     font-style: normal;
@@ -441,6 +455,10 @@ header a:hover {
   #hamnav input[type=checkbox]:checked + label {
     opacity: 0.8;
   }
+  .noScrollOnMenuOpen .fade{
+      pointer-events: all;
+      opacity: .7;
+    }
   #wpadminbar{
     position: fixed;
   }
