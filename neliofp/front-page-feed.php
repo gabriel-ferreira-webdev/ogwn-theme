@@ -11,17 +11,6 @@ global $post;
 <!-- <div class="feed-posts featured-posts">
   <ul> -->
       <nav class="feed-post featured-post">
-        <!-- post categories -->
-        <div class="feed-categories">
-        <?php
-        $categories = get_the_category();
-        $cat = $categories[0];
-        ?>
-        <div class="feed-category">
-
-          <a  title="<?php echo $cat->name;?>" href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
-        </div>
-              </div>
         <!-- post thumbnail -->
         <div class="feed-post-thumb featured-post-thumb">
           <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
