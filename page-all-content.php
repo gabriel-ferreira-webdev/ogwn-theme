@@ -18,18 +18,13 @@
 
     <li class="feed-post">
       <!-- post categories -->
-      <div class="feed-categories">
-      <?php
-      $categories = get_the_category();
-      for ($i=0; $i < count($categories); $i++) {
-      $cat = $categories[$i];
-      ?>
       <div class="feed-category">
-
-        <a  title="<?php echo $cat->name;?>" href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
+        <?php
+        $categories = get_the_category();
+        $cat = $categories[0];
+        ?>
+        <a href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
       </div>
-      <?php  } ?>
-            </div>
       <!-- post thumbnail -->
       <div class="feed-post-thumb ">
         <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>

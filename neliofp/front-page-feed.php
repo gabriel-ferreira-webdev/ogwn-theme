@@ -8,21 +8,19 @@ global $post;
  $author_id= $post->post_author;
 ?>
 <!-- Featured Posts feed -->
-<div class="feed-posts featured-posts">
-  <ul>
-      <li class="feed-post featured-post">
+<!-- <div class="feed-posts featured-posts">
+  <ul> -->
+      <nav class="feed-post featured-post">
         <!-- post categories -->
         <div class="feed-categories">
         <?php
         $categories = get_the_category();
-        for ($i=0; $i < count($categories); $i++) {
-        $cat = $categories[$i];
+        $cat = $categories[0];
         ?>
         <div class="feed-category">
 
           <a  title="<?php echo $cat->name;?>" href="<?php echo get_category_link($cat->term_id);?>"><?php echo $cat->name;?></a>
         </div>
-        <?php  } ?>
               </div>
         <!-- post thumbnail -->
         <div class="feed-post-thumb featured-post-thumb">
@@ -41,7 +39,7 @@ global $post;
 
         </div>
 
-      </li>
-
+      </nav>
+<!--
   </ul>
-</div>
+</div> -->
