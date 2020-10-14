@@ -117,3 +117,9 @@ function initAuthor() {
     elToHide.style.display = 'none';
   }
 };
+
+// Mobile menu
+function hidePageOnMenuOpen(checkbox) {
+  if (checkbox.checked) document.body.className = 'hidePageOnMenuOpen';
+  else document.body.className = '';
+}
