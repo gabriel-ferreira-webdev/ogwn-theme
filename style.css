@@ -956,7 +956,7 @@ footer .container {
 .article-header h2 {
   font-family: "arvo";
   /*font-size: calc(24px + 6 * ((100vw - 320px) / 680));*/
-  font-size: 24px;
+  /*font-size: 24px;*/
 }
 
 .article-header-info {
@@ -973,6 +973,7 @@ footer .container {
   font-family: "sourceSansPro-Italic";
   /*font-size: calc(20px + 6 * ((100vw - 320px) / 680));*/
   /*font-size: 20px;*/
+  margin: 0;
 }
 
 .article-date {
@@ -1426,7 +1427,7 @@ footer .container {
   }
 
   .article-header-info {
-    height: 4em;
+    /*height: 4em;*/
   }
 }
 
