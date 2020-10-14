@@ -37,6 +37,7 @@ Author: OGWN Team
   width:100%;
   height:100%;
 }
+
 html,
 body {
   border: none;
@@ -429,7 +430,7 @@ header a:hover {
     top:0;
     z-index: 99;
     height:100%;
-    width:100%;
+    width:50%;
     background:#1e1c44;
   }
 
@@ -440,7 +441,9 @@ header a:hover {
   #hamnav input[type=checkbox]:checked + label {
     opacity: 0.8;
   }
-
+  #wpadminbar{
+    position: fixed;
+  }
   .menu-top-menu-container{
     position: absolute;
     z-index: 99;
