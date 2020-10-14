@@ -119,6 +119,14 @@ function search_filter($query) {
   }
 }
 add_action( 'pre_get_posts', 'search_filter' );
+$caid = '1';
+function exclude_category( $query ) {
+    global $caid;
+    if ( $query->is_search) {
+        $query->set( 'cat', $caid );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category' );
 
 // allow HTML in author bio for formatting
 remove_filter('pre_user_description', 'wp_filter_kses');
