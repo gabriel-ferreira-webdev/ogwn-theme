@@ -120,6 +120,15 @@ function search_filter($query) {
 }
 add_action( 'pre_get_posts', 'search_filter' );
 
+$caid = '-1';
+function exclude_category_all_content( $query ) {
+    if ( ! is_admin() ){
+    global $caid;
+        $query->set( 'cat', $caid );
+        }
+}
+add_action( 'pre_get_posts', 'exclude_category_all_content' );
+
 // allow HTML in author bio for formatting
 remove_filter('pre_user_description', 'wp_filter_kses');
 ?>

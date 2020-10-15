@@ -27,10 +27,7 @@ $search = new WP_Query( $search_query );
 <div class="feed-posts">
   <ul>
 
-<?php
-global $wp_query;
-$total_results = $wp_query->found_posts;
-?>
+
 <?php while($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
   <?php $author_id = get_the_author_meta('ID'); ?>
