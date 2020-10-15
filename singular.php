@@ -8,7 +8,7 @@
         <?php  $author_id = get_the_author_meta('ID'); ?>
 
         <!-- Article Header -->
-        <div class="article-header container">
+        <div class="article-header">
           <h2><?php the_title();?></h2>
 
           <!-- Author Information Header -->
@@ -28,7 +28,7 @@
 
 
         <!-- Article Content -->
-        <div class="article-content container">
+        <div class="article-content">
           <?php the_content();?>
         </div>
       <?php endwhile; endif;?>
