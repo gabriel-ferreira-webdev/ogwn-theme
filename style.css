@@ -410,6 +410,10 @@ header a:hover {
 /* -------------------------------------------------------------------------- */
 
 @media (max-width:1016px) {
+  .container {
+    font-size: 1.2rem;
+  }
+
   .fade{
     display:inline-block;
     position: fixed;
