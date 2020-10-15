@@ -129,6 +129,12 @@ main .container {
   opacity: 1;
 }
 
+.aligncenter {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	1. Hamburguer Menu
