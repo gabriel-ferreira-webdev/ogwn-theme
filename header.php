@@ -21,7 +21,7 @@
 
         <nav id="hamnav">
           <!-- [THE HAMBURGER] -->
-          <input type="checkbox" id="hammy" name="hammy" class="fade" onclick="noScrollOnMenuOpen(this)">
+          <input type="checkbox" id="hammy" name="hammy" onclick="noScrollOnMenuOpen(this)">
             <label for="hammy">&#9776;</label>
           </input>
 
@@ -35,6 +35,6 @@
             ) ?>
           </div>
         </nav>
-      <label for="hammy"class="fade"></label>
+        <label for="hammy" class="fade"></label>
       </div>
     </header>
