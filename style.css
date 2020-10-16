@@ -44,7 +44,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  color: #f4f4f4;
+  color: #eee;
   line-height: 1.5;
   background: black;
 }
@@ -329,7 +329,7 @@ main .container {
 
 * {
   font-family: "sourceSansPro";
-  color: white;
+  color: #eee;
 }
 
 a:link, a:visited {
@@ -465,7 +465,7 @@ header a:hover {
     width: 275px;
     background:#1e1c44;
     height:100vh;
-    border-left: 1px solid #fff;
+    border-left: 1px solid #423f7b;
   }
 
   #hamnav input[type=checkbox]:checked ~ #hamitems {
@@ -481,9 +481,9 @@ header a:hover {
   }
 
   .menu-top-menu-container{
-position: absolute;
-top:78px;
-right:0;
+    position: absolute;
+    top: 78px;
+    right: 0;
     text-align: right;
     width:100%;
   }
@@ -495,15 +495,15 @@ right:0;
   }
 
   .menu-top-menu-container > #menu-top-menu > li {
-    border-top:1px solid white;
-    padding:20px 0;
+    border-top: 1px solid #423f7b;
+    padding: 0.8rem 0;
   }
   .menu-top-menu-container > #menu-top-menu > li a{
     margin-right: 1rem;
   }
   #menu-top-menu > li:last-child {
     /*margin-bottom: 0.3rem;*/
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #423f7b;
   }
 
   #menu-top-menu > li a:link, #menu-top-menu > li a:visited {
