@@ -480,14 +480,13 @@ header a:hover {
   }
 
   .menu-top-menu-container{
-    position: relative;
-    /*z-index: 99;*/
-    /*right: 0;*/
-    /*margin-top: 5px;*/
-    /*top:124px;*/
-    /*width:100%;*/
+    position: absolute;
+    top:-74px;
+    padding-top:78px;
+    right:0;
     background:#1e1c44;
     text-align: right;
+    height:100vh;
   }
 
   .menu-top-menu-container > #menu-top-menu {
@@ -549,9 +548,6 @@ header a:hover {
 @media (min-width:783px){
   #hamitems{
     min-width:30%;
-  }
-  .menu-top-menu-container{
-    top:110px;
   }
 }
 
