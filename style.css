@@ -142,56 +142,7 @@ main .container {
 */
 /* -------------------------------------------------------------------------- */
 
-/* [ON BIG SCREEN] */
-/* Wrapper */
-#hamnav {
-  position: sticky;
-  top: 0;
-  /*width: 100%;*/
-}
 
-/* Hide Hamburger */
-#hamnav label, #hammy { display: none; cursor: pointer; }
-
-/* Horizontal Menu Items */
-#hamitems {
-  display: flex;
-  /*display: block;*/
-}
-.search-open{
-  width:33px;
-  margin:.6rem 0 0 1rem;
-}
-#search {
-  font-size: 1rem;
-  color: #000;
-}
-
-
-#search::placeholder {
-  font-style: italic;
-  color: #ccc;
-}
-
-#search-button {
-  color: #000;
-  width: 24px;
-  height: 24px;
-  background: none;
-  border: none;
-  margin-right: 1rem;
-}
-
-#search-button svg {
-  color: #fff;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-}
-
-.search-icon {
-  fill: #fff;
-}
 
 /*!
  * Hamburgers
@@ -412,9 +363,7 @@ header a:hover {
   max-width: 270px;
   height: 66px;
 }
-.header-searchform{
-  margin-left:auto;
-}
+
 .search-bg-mb{
 display:none;
   position: absolute;text-align: center;
@@ -425,17 +374,7 @@ display:none;
   background: #100f26;
   padding:12px 0;
 }
-#searchCb{
-  display:none;
-}
-#search {
-  display:inline-block;
-width:calc(100% - 60px);
-  font-size: 1.1rem;
-  padding: 0.2rem;
-  transition:.2s;
-  /* width: calc(100% - 60px); */
-}
+
 .header-searchform input[type=checkbox]:checked ~ #search-bg-mb{
   display:block;
 }
@@ -448,7 +387,65 @@ width:calc(100% - 60px);
   vertical-align: top;
   margin-top: 0.1rem;
 }
+/* [ON BIG SCREEN] */
+/* Wrapper */
+#hamnav {
+  position: sticky;
+  top: 0;
+  /*width: 100%;*/
+}
 
+/* Hide Hamburger */
+#hamnav label, #hammy { display: none; cursor: pointer; }
+
+/* Horizontal Menu Items */
+#hamitems {
+  display: flex;
+  /*display: block;*/
+}
+.search-open{
+  width:33px;
+  margin:.6rem 0 0 1rem;
+}
+#searchCb{
+  display:none;
+}
+#search {
+  width:calc(100% - 12px - 24px - 1.5rem);
+  font-size: 1rem;
+  color: white;
+  background:none;
+  border:0;
+  border-bottom:1px solid #1e1c44;
+}
+#searchform{
+  margin-left: auto;
+}
+
+#search::placeholder {
+  font-style: italic;
+  color: #ccc;
+}
+
+#search-button {
+  color: #000;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+#search-button svg {
+  color: #fff;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.search-icon {
+  fill: #fff;
+}
 /* -------------------------------------------------------------------------- */
 /*	5. Mobile Menu
 /* -------------------------------------------------------------------------- */
@@ -893,6 +890,7 @@ footer .container {
   width: 100%;
 }
 
+
 /* -------------------------------------------------------------------------- */
 /*	8. Author Page
 /* -------------------------------------------------------------------------- */
@@ -1304,6 +1302,26 @@ footer .container {
     margin-right: 0;
   }
 
+  .search-bg-mb{
+    display:inline-block;
+    position: static;
+  }
+  #searchCbLabel{
+    display:none;
+  }
+  #search {
+    display:inline-block;
+  width:calc(100% - 60px);
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    transition:.2s;
+    /* width: calc(100% - 60px); */
+  }
+  #searchform{
+    width: 100%;
+    max-width: 280px;
+    margin:0 auto 0 .5rem;
+  }
 /* left / right align in menu
   .menu-left {
     flex-grow: 0;
