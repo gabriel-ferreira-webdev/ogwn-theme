@@ -330,6 +330,7 @@ main .container {
 * {
   font-family: "sourceSansPro";
   color: #eee;
+  box-sizing: border-box;
 }
 
 a:link, a:visited {
@@ -463,8 +464,8 @@ header a:hover {
     /*height:100%;*/
     /*min-width:75%;*/
     width: 275px;
-    background:#1e1c44;
-    height:100vh;
+    background: #1e1c44;
+    height: 100vh;
     border-left: 1px solid #423f7b;
   }
 
@@ -623,9 +624,6 @@ header a:hover {
 }
 
 /* POSTS FEED  */
-.feed-posts {
-  width: 100%;
-}
 .primary-sidebar div > nav{
   text-align: left;
   display: flex;
@@ -634,49 +632,79 @@ header a:hover {
   padding: 0;
 
 }
+
+.feed-posts {
+  /*width: 100%;*/
+}
+
 .feed-posts ul {
-  text-align: left;
+  /*text-align: left;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 0;
+  padding: 0;*/
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px,1fr));
+  grid-gap: 2rem;
+  /*grid-auto-rows: min-content;*/
+  justify-content: center;
+
+  /* boring properties */
+  list-style: none;
+  /*background: wheat;*/
+  padding: 1rem;
+  /*width: 80vw;*/
+  margin: 0 auto;
 }
 
 .feed-post {
-  /*font-size: calc(14px + 6 * ((100vw - 320px) / 680));*/
-  position: relative;
+  /*position: relative;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
-  padding: 6px 0;
-  /*-webkit-box-shadow: 3px 3px 6px 2px #000 !important;
-  -moz-box-shadow: 3px 3px 6px 2px #000;
-  box-shadow: 3px 3px 6px 2px #000 !important;
+  padding: 6px 0;*/
+
+  /*height: 300px;*/
+  /*border: 1px solid green;*/
+  background-color: #2b2b2b;
+  -webkit-box-shadow: 2px 2px 6px 1px #000 !important;
+  -moz-box-shadow: 2px 2px 6px 1px #000;
+  box-shadow: 2px 2px 6px 1px #000 !important;
   border: 1px solid #000 !important;
-  padding: 0.5rem 0.75rem;
   border-radius: 0.28571429rem !important;
-  background-color: #2b2b2b;*/
+  /*padding: 0.5rem;*/
+  /*background: yellow;*/
+}
+
+.feed-post:hover {
+  background-color: #323232;
 }
 
 
 /* POSTS FEED POST TEXT AND AVATAR */
 .feed-post-info-flex {
-  float: left;
-  width: 57%;
-  margin-top: 6px;
-  margin-left: 9px;
+  /*float: left;*/
+  /*width: 57%;*/
+  /*margin-top: 0.2rem;*/
+  /*margin-left: 9px;*/
   display: flex;
   flex-wrap: nowrap;
+  /*margin: 0.2rem 0.5rem;*/
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  /*width: 100%;
+  position: relative;*/
 }
 
 .feed-post-title {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+  margin-right: 0.6rem;
 }
 
 .feed-post-title-link {
@@ -685,12 +713,13 @@ header a:hover {
 
 .feed-post-author-name {
   display: block;
-  margin-top: 3px;
+  /*margin-top: 3px;*/
   font-family: "sourceSansPro-LightItalic";
 }
 
 .feed-post-avatar {
   display: none;
+  margin-left: 0.6rem;
 }
 
 .feed-post-info {
@@ -706,9 +735,10 @@ header a:hover {
 }
 
 .feed-category {
-  display: inline;
-  color: white;
-  padding: 12px 1em 12px 0;
+  /*display: inline;
+  color: white;*/
+  /*padding: 12px 1em 12px 0;*/
+  /*margin-bottom: 0.3rem;*/
 }
 
 .feed-post-thumb {
@@ -1044,8 +1074,9 @@ footer .container {
 }
 
 /* ARTICLE CONTENT */
-.article-content {
-  /*padding: 12px 0 48px;*/
+.article-content * {
+  font-family: "Lato", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.6px;
 }
 
 /* EMBEDS */
@@ -1065,11 +1096,11 @@ footer .container {
   }
 
   .feed-post {
-    width: 31.5%;
+    /*width: 31.5%;*/
   }
 
   .feed-post:nth-child(3n+2){
-    margin:0 1%;
+    /*margin:0 1%;*/
   }
 
   .feed-post-thumb {
@@ -1078,8 +1109,8 @@ footer .container {
 
   .feed-post-avatar {
     display: inline-block;
-    margin-right: 12px;
-    width: 13%;
+    margin-right: 0.8rem;
+    width: 3rem;
   }
 
   .feed-post-avatar img {
@@ -1093,7 +1124,7 @@ footer .container {
   }
 
   .feed-post-info {
-    width: 75%;
+    /*width: 75%;*/
   }
 }
 
@@ -1312,7 +1343,7 @@ footer .container {
   }
 
   /* POSTS FEED  */
-  .feed-post:nth-child(3n+2){
+  /*.feed-post:nth-child(3n+2){
     margin:0 0 0 1%;
   }
   .feed-post{
@@ -1322,7 +1353,7 @@ footer .container {
 
   .feed-post:nth-child(4n+1){
     margin:0;
-  }
+  }*/
 
   /* CONTENT CREATORS DESKTOP */
   .author-list .user {
