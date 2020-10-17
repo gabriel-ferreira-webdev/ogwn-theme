@@ -147,7 +147,6 @@ main .container {
 #hamnav {
   position: sticky;
   top: 0;
-  z-index: 1000;
   /*width: 100%;*/
 }
 
@@ -159,11 +158,15 @@ main .container {
   display: flex;
   /*display: block;*/
 }
-
+.search-open{
+  width:33px;
+  margin:.6rem 0 0 1rem;
+}
 #search {
   font-size: 1rem;
   color: #000;
 }
+
 
 #search::placeholder {
   font-style: italic;
@@ -408,7 +411,42 @@ header a:hover {
   width:100%;
   max-width: 270px;
   height: 66px;
-  margin-right:auto;
+}
+.header-searchform{
+  margin-left:auto;
+}
+.search-bg-mb{
+display:none;
+  position: absolute;text-align: center;
+  top:79px;
+  left:0;
+    z-index: 9999;
+    width:100%;
+  background: #100f26;
+  padding:12px 0;
+}
+#searchCb{
+  display:none;
+}
+#search {
+  display:inline-block;
+width:calc(100% - 60px);
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  transition:.2s;
+  /* width: calc(100% - 60px); */
+}
+.header-searchform input[type=checkbox]:checked ~ #search-bg-mb{
+  display:block;
+}
+/* .header-searchform input[type=checkbox]:checked ~ #search{
+  display:inline-block;
+  transition:.2s;
+  width:100%;
+} */
+#search-button {
+  vertical-align: top;
+  margin-top: 0.1rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -433,15 +471,17 @@ header a:hover {
     height:100%;
     opacity: 0;
     pointer-events: none;
-    z-index: 98;
+    z-index: 1;
     background:black;
     transition:.3s
   }
-
+.noScrollOnMenuOpenhammy #hamnav{
+  z-index: 2;
+}
   /* Show Hamburger Icon */
   #hamnav label {
     position: relative;
-    z-index: 9999;
+    z-index: 99;
     display: block;
     color: white;
     font-style: normal;
@@ -473,6 +513,8 @@ header a:hover {
   }
 
   #hamnav input[type=checkbox]:checked + label {
+
+    z-index: 999;
     opacity: 0.8;
   }
 
@@ -510,44 +552,25 @@ right:0;
     font-size: 1.5rem;
   }
 
-  #search {
-    vertical-align: top;
-    /*margin-top: 0.1rem;*/
-    margin-left: 1rem;
-    font-size: 1.1rem;
-    padding: 0.2rem;
-    width: calc(100% - 60px);
-  }
 
-  #search-button {
-    vertical-align: top;
-    margin-top: 0.1rem;
-    margin-right: 1rem;
-  }
 
-  .noScrollOnMenuOpen {
+  .noScrollOnMenuOpenhammy, .noScrollOnMenuOpensearchCb {
     position: fixed;
     height: 100%;
     width: 100%;
   }
 
-  .noScrollOnMenuOpen .fade{
+  .noScrollOnMenuOpenhammy #fademenu{
+    pointer-events: all;
+    opacity: 0.7;
+  }
+.noScrollOnMenuOpensearchCb #fadesearch{
     pointer-events: all;
     opacity: 0.7;
   }
 }
 
-@media (min-width:414px){
-  #hamitems{
-    min-width:50%;
-  }
-}
 
-@media (min-width:783px){
-  #hamitems{
-    min-width:30%;
-  }
-}
 
 /* -------------------------------------------------------------------------- */
 /*	6. Template
@@ -1084,7 +1107,7 @@ footer .container {
     position: absolute;
     left:0;
     top:6px;
-    width: 9%;
+    width: 12%;
   }
   .feed-post-info {
     padding-left:calc(9% + 12px);
@@ -1100,6 +1123,7 @@ footer .container {
 
 
 }
+@media (min-width:782px){
 
 @media (min-width:768px) {
 
@@ -1506,6 +1530,10 @@ footer .container {
 
   .article-header-info {
     /*height: 4em;*/
+  }
+
+  .feed-post-avatar {
+    width: 9%;
   }
 }
 

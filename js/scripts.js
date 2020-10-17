@@ -120,6 +120,6 @@ function initAuthor() {
 
 // Mobile menu
 function noScrollOnMenuOpen(checkbox) {
-  if (checkbox.checked) document.body.classList.add('noScrollOnMenuOpen');
-  else document.body.classList.remove('noScrollOnMenuOpen');
+  if (checkbox.checked) document.body.classList.add('noScrollOnMenuOpen' + checkbox.id);
+  else document.body.classList.remove('noScrollOnMenuOpen' + checkbox.id);
 }
