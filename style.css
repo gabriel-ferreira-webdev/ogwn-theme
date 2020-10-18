@@ -95,7 +95,7 @@ blockquote::after {
 }
 
 main .container {
-  width: calc(100% - 2rem);
+  width: calc(100% - .5rem);
   margin: auto;
 }
 
@@ -141,115 +141,7 @@ main .container {
     based on https://code-boxx.com/simple-responsive-pure-css-hamburger-menu/
 */
 /* -------------------------------------------------------------------------- */
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
-/*
-   * Squeeze
-   */
-/*
-.hamburger {
-  padding: 15px 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible;
-}
 
-.hamburger:hover {
-  opacity: 0.7;
-}
-
-.hamburger.is-active:hover {
-  opacity: 0.7;
-}
-
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
-}
-
-.hamburger-box {
-  width: 40px;
-  height: 24px;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-}
-
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-  width: 40px;
-  height: 4px;
-  background-color: #000;
-  border-radius: 4px;
-  position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
-
-.hamburger-inner::before, .hamburger-inner::after {
-  content: "";
-  display: block;
-}
-
-.hamburger-inner::before {
-  top: -10px;
-}
-
-.hamburger-inner::after {
-  bottom: -10px;
-}
-
-.hamburger--squeeze .hamburger-inner {
-  transition-duration: 0.075s;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze .hamburger-inner::before {
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-}
-
-.hamburger--squeeze .hamburger-inner::after {
-  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze.is-active .hamburger-inner {
-  transform: rotate(45deg);
-  transition-delay: 0.12s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--squeeze.is-active .hamburger-inner::before {
-  top: 0;
-  opacity: 0;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-}
-
-.hamburger--squeeze.is-active .hamburger-inner::after {
-  bottom: 0;
-  transform: rotate(-90deg);
-  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-*/
 /* -------------------------------------------------------------------------- */
 /*	2. Document Setup
     /* -------------------------------------------------------------------------- */
@@ -410,7 +302,7 @@ header a:hover {
 
 .search-open {
   width: 33px;
-  margin: .6rem 0 0 1rem;
+  margin-top: .6rem;
 }
 
 #search-cb {
@@ -580,11 +472,6 @@ header a:hover {
     opacity: 0.7;
   }
 
-  .search-bg-mb {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
   .search-bg-mb #search-button {
     width: 2rem;
     height: 2rem;
@@ -611,6 +498,9 @@ header a:hover {
 
 .section-header h5, .feed-container h2 {
   font-family: "sourceSansPro"
+}
+.section-header, .feed-container h2 {
+  text-align: center;
 }
 
 .section-gray {
@@ -671,11 +561,13 @@ header a:hover {
 
 /* POSTS FEED  */
 .primary-sidebar div>nav {
-  text-align: left;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px,1fr));
+  grid-gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0 auto;
 }
 
 .feed-posts ul {
@@ -684,7 +576,7 @@ header a:hover {
   grid-gap: 2rem;
   justify-content: center;
   list-style: none;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 0 auto;
 }
 
@@ -701,22 +593,37 @@ header a:hover {
   background-color: #323232;
 }
 
-
-/* POSTS FEED POST TEXT AND AVATAR */
-.feed-post-info-flex {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+.feed-post-thumb {
+  width: 45%;
 }
 
+.feed-post-thumb-a {
+  background:#232323;
+  float: left;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 0px;
+  width: 100%;
+  padding-top: 56.25%;
+}
+/* POSTS FEED POST TEXT AND AVATAR */
+
+.feed-post-info{
+  width: calc(55% - 6px);
+margin-left: auto;
+max-height:92px;
+}
+.feed-post-info{
+display:block;
+}
 .feed-post-title {
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp:1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 0.6rem;
 }
 
 .feed-post-title-link {
@@ -724,18 +631,21 @@ header a:hover {
 }
 
 .feed-post-author-name {
-  display: block;
+  margin-left:.5rem;
+  vertical-align: top;
   font-family: "sourceSansPro-LightItalic";
 }
-
+.feed-post-info-author{
+  display:block;
+}
 .feed-post-avatar {
-  display: none;
-  margin-left: 0.6rem;
+  display:inline-block;
+  width:32px;
+}
+.feed-post-avatar .avatar{
+  width:100%;
 }
 
-.feed-post-info {
-  width: 100%;
-}
 
 /* POSTS FEED POST CATEGORY */
 .feed-categories {
@@ -752,21 +662,8 @@ header a:hover {
   /*margin-bottom: 0.3rem;*/
 }
 
-.feed-post-thumb {
-  width: 39%;
-  margin-right: auto;
-}
 
-.feed-post-thumb-a {
-  float: left;
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 0px;
-  width: 100%;
-  padding-top: 56.25%;
-}
+
 
 /* FRONT PAGE CONTENT CREATORS */
 .avatar {
@@ -916,10 +813,6 @@ footer .container {
 /* AUTHOR PAGE INFORMATION  */
 #author-page .section {
   /*padding-top: 0;*/
-}
-
-#author-page .feed-post {
-  padding-top: 1.2rem;
 }
 
 .author-page-header {
@@ -1095,43 +988,32 @@ footer .container {
 
 /* EMBEDS */
 /* YOUTUBE */
-.wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"] {
+  .wp-block-embed,.wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"] {
   max-width: 100%;
 }
-
 /* -------------------------------------------------------------------------- */
 /*	11. Media Queries
   /* -------------------------------------------------------------------------- */
-@media (min-width:320px) {
-
-  /* POSTS FEED  */
-  .section-header, .feed-container h2 {
-    text-align: center;
+@media (min-width:375px) {
+.feed-post-title {
+-webkit-line-clamp: 2;
+}
+}
+@media (min-width:590px) {
+  .feed-post-info{
+    max-height:none;
+    width:calc(100% - 6px);
   }
+.feed-post-thumb{width:100%;}
+.feed-post-title-link{
+  display: inline-block;
+}
 
-  .feed-post-thumb {
-    width: 100%;
-  }
+.feed-post-author-name{
+  margin-left:0;
+}
 
-  .feed-post-avatar {
-    display: inline-block;
-    margin-right: 0.8rem;
-    width: 3rem;
-  }
 
-  .feed-post-avatar img {
-    width: 100%;
-    height: auto;
-  }
-
-  .feed-post-info-flex {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .feed-post-info {
-    /*width: 75%;*/
-  }
 }
 
 @media (min-width:768px) {
@@ -1211,6 +1093,7 @@ footer .container {
 @media (min-width:1017px) {
 
   /* HEADER DESKTOP */
+
   main .author-container {
     width: 850px;
     font-size: 1.1rem;
@@ -1422,20 +1305,16 @@ footer .container {
 
   /* EMBEDS */
   /* YOUTUBE */
-  .wp-block-embed, .wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"] {
-    max-width: 50%;
-  }
 
-  .wp-block-embed {
-    margin: auto;
-  }
 
   .wp-block-embed.alignright {
+    max-width: 50%;
     margin-right: 0;
     margin-left: auto;
   }
 
   .wp-block-embed.alignleft {
+    max-width: 50%;
     margin-right: auto;
     margin-left: 0;
   }
@@ -1447,6 +1326,7 @@ footer .container {
   .menu-top-menu-container {
     max-width: 1400px;
   }
+
 }
 
 @media (min-width:1500px) {
@@ -1473,30 +1353,15 @@ footer .container {
     display: flex;
     flex-wrap: wrap;
   }
-
+  .featured-post-thumb{
+    width:35%;
+  }
+  .featured-post-info{
+    width:calc(65% - 6px);
+    margin-right:0;
+  }
   /* FEATURED POSTS FEED DESKTOP */
-  .featured-post, .featured-post:nth-child(2n) {
-    margin-left: 0;
-  }
 
-  .featured-post {
-    width: 100%;
-  }
-
-  .featured-post-thumb {
-    width: 35%;
-  }
-
-  .featured-post-info {
-    width: calc(100% - 35% - 12px);
-    margin-left: 12px;
-    padding: 0;
-  }
-
-  .featured-post-avatar {
-    width: 35px;
-    position: static;
-  }
 }
 
 @media (min-width:1900px) {
