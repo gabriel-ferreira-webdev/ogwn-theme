@@ -360,7 +360,7 @@ header a:hover {
 /* -------------------------------------------------------------------------- */
 /*	5. Mobile Menu
 /* -------------------------------------------------------------------------- */
-@media (max-width:1024px) {
+@media (max-width:1279px) {
   .container, .reading-container, .reading-container-shadow, .reading-container-light {
     font-size: 1.2rem;
   }
@@ -1090,7 +1090,7 @@ footer .container {
   }
 }
 
-@media (min-width:1025px) {
+@media (min-width:1280px) {
 
   /* HEADER DESKTOP */
 
@@ -1178,7 +1178,7 @@ footer .container {
   }
 
   #menu-top-menu>li {
-    margin-right: calc(12px + 24 * ((100vw - 320px) / 680));
+    margin-right: 18px;
   }
 
   #menu-top-menu>li:last-child {
