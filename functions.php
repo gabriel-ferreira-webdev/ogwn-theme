@@ -7,14 +7,13 @@ function load_stylesheets()
 
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
-/* JQuery not being used, should avoid using it in future :P
 function include_jquery(){
   wp_deregister_script('jquery');
   wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-3.5.1.min.js', '', 1, true);
   add_action('wp_enqueue_scripts', 'jquery');
 }
 add_action('wp_enqueue_scripts', 'include_jquery');
-*/
+
 
 function loadjs(){
   wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
@@ -115,6 +114,23 @@ add_action( 'pre_get_posts', 'exclude_category_all_content' );
 
 // allow HTML in author bio for formatting
 remove_filter('pre_user_description', 'wp_filter_kses');
+
+// Add user contact methods
+add_filter( 'user_contactmethods','wpse_user_contactmethods', 10, 1 );
+function wpse_user_contactmethods( $contact_methods ) {
+    $contact_methods['twitter']  = __( 'Twitter URL', 'text_domain' );
+    $contact_methods['facebook'] = __( 'Facebook URL', 'text_domain'    );
+    $contact_methods['googleplus'] = __( 'Google+ URL', 'text_domain'    );
+    $contact_methods['instagram'] = __( 'Instagram URL', 'text_domain'    );
+    $contact_methods['linkedin'] = __( 'LinkedIn URL', 'text_domain'    );
+    $contact_methods['youtube']  = __( 'YouTube URL', 'text_domain' );
+    $contact_methods['bitchute']  = __( 'BitChute URL', 'text_domain' );
+    $contact_methods['lbry']  = __( 'LBRY URL', 'text_domain' );
+
+    return $contact_methods;
+}
+
+// custom login Logo
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
