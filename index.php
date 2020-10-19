@@ -40,7 +40,20 @@
       <h5>CONTENT CREATORS</h5>
     </div>
 
-    <?php echo do_shortcode( '[authoravatars avatar_size=300 link_to_authorpage=true show_name=true show_biography=false roles=content_creator]' ); ?>
+    <?php
+// The Query
+$user_query = new WP_User_Query( array( 'role' => 'content_creator' ) );
+
+// User Loop
+if ( ! empty( $user_query->get_results() ) ) {
+	foreach ( $user_query->get_results() as $user ) {
+    echo get_avatar($user->ID);
+    the_author_meta('display_name',$user->ID);
+	}
+} else {
+	echo 'No users found.';
+}
+?>
 
   </div>
 </div>
