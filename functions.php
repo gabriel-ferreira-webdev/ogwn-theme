@@ -115,4 +115,17 @@ add_action( 'pre_get_posts', 'exclude_category_all_content' );
 
 // allow HTML in author bio for formatting
 remove_filter('pre_user_description', 'wp_filter_kses');
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/seal.png);
+		height:65px;
+		width:320px;
+		background-size: contain;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 ?>
