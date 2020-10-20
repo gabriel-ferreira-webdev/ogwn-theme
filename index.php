@@ -40,6 +40,8 @@
       <h5>CONTENT CREATORS</h5>
     </div>
 
+<div class="author-list">
+
     <?php
 // The Query
 $user_query = new WP_User_Query( array( 'role' => 'content_creator' ) );
@@ -47,13 +49,26 @@ $user_query = new WP_User_Query( array( 'role' => 'content_creator' ) );
 // User Loop
 if ( ! empty( $user_query->get_results() ) ) {
 	foreach ( $user_query->get_results() as $user ) {
-    echo get_avatar($user->ID);
+    echo "<div class='user'>";
+    echo '<a href="/author/';
+    echo the_author_meta('nickname',$user->ID);
+    echo '">';
+    echo get_avatar($user->ID, 300);
+    echo "</a>";
+
+    echo '<a href="/author/';
+    echo the_author_meta('nickname',$user->ID);
+    echo '">';
     the_author_meta('display_name',$user->ID);
+    echo "</a>";
+    echo "</div>";
 	}
 } else {
 	echo 'No users found.';
 }
 ?>
+
+</div>
 
   </div>
 </div>
