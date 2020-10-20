@@ -1195,15 +1195,33 @@ footer .container {
     color: black;
   }
   .search-bg-mb {
-    display: inline-block;
+    display: inline;
     position: static;
   }
-
-  #search-cb-label {
-    display: none;
+  #search-bg-mb{
+  position: absolute;
+      left:30px;
+      top:0;
+  width:100%;
+    display:none;
+    padding:0;
   }
-
+  .header-searchform input[type=checkbox]:checked~#search-cb-label svg {
+    fill:red;
+  }
+  .header-searchform input[type=checkbox]:checked~#search-bg-mb {
+      display:inline-block;
+  }
+  #search-cb-label {
+    display:inline-block;    position: absolute;
+        left:0;
+  }
+.search-open{
+    margin-top:0;
+    margin-left:0;
+}
   #search {
+
     display: inline-block;
     width: calc(100% - 60px);
     font-size: 1.1rem;
@@ -1213,8 +1231,10 @@ footer .container {
   }
 
   #searchform {
+    position:relative;
     width: 100%;
     max-width: 280px;
+    height:38px;
     margin: 0 auto 0 1rem;
   }
 
