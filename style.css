@@ -570,7 +570,7 @@ height: 24px;
 .alm-load-more-btn{
   display:none;
 }
-.feed-posts > ul, .feed-posts > div {
+.feed-posts{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(275px,1fr));
   grid-gap: 1rem;
