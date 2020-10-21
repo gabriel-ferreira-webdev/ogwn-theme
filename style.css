@@ -510,21 +510,8 @@ height: 24px;
   width: 100%;
 }
 
-.iframe-container {
-  margin-bottom: 6px;
-  position: relative;
-  padding-top: 56.25%;
-  height: 0;
-  width: 100%;
-}
 
-#twitch-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+
 
 #live-dot {
   vertical-align: middle;
@@ -887,6 +874,7 @@ footer .container {
   top: -0.5rem;
 }
 
+
 .author-url, #author-page-read-more, .author-page-header-desc {
   /*font-size: calc(14px + 6 * ((100vw - 320px) / 680));*/
   font-size: 1rem;
@@ -989,9 +977,37 @@ footer .container {
 
 /* EMBEDS */
 /* YOUTUBE */
-  .wp-block-embed,.wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"] {
+  .wp-block-embed,.wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"],.iframe-container{
   max-width: 100%;
 }
+/* IFRAMES */
+.iframe-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  width: 100%;
+}
+.iframe{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+/* #lbry-iframe{
+  position: relative;
+padding-bottom: 56.25%;
+height: 0;
+width:100%;
+}
+#lbry-iframe body{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
 /* -------------------------------------------------------------------------- */
 /*	11. Media Queries
   /* -------------------------------------------------------------------------- */
@@ -1205,7 +1221,7 @@ footer .container {
   }
   #search-bg-mb{
   position: absolute;
-      left:20px;
+      left:32px;
       top:0;
   width:100%;
     display:none;
@@ -1216,15 +1232,20 @@ footer .container {
       display:inline-block;
   }
   .header-searchform input[type=checkbox]:checked~ #search-cb-label .search-open {
-    width:12px;
-    background-position: right;
+    background-image:url("img/icons/arrow.png");=
+    -moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+filter: FlipH;
+-ms-filter: "FlipH";
   }
   #search-cb-label {
     display:inline-block;    position: absolute;
         left:0;
   }
 .search-open{
-
+  cursor:pointer;
     margin-top:4px;
     margin-left:0;
 }
@@ -1242,7 +1263,7 @@ footer .container {
     position:relative;
     width: 100%;
     max-width: 280px;
-    height:38px;
+    height:32px;
     margin: 0 auto 0 1rem;
   }
 
