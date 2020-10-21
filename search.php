@@ -3,11 +3,6 @@
 Template Name: Search Page
 */
 ?>
-<?php
-global $query_string;
-wp_parse_str( $query_string, $search_query );
-$search = new WP_Query( $search_query );
-?>
 
 <?php get_header();?>
 
@@ -19,15 +14,7 @@ $search = new WP_Query( $search_query );
       </div>
 
       <!-- Posts feed -->
-      <div class="feed-posts">
-        <ul>
-          <?php while($wp_query->have_posts()) : $wp_query->the_post(); ?>
-          <?php $author_id = get_the_author_meta('ID'); ?>
-
-          <?php include("feed-post.php"); ?>
-          <?php endwhile;wp_reset_postdata();?>
-        </ul>
-      </div>    <!-- Posts feed -->
+<?php echo do_shortcode('[ajax_load_more container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" search="'. get_search_query() .'"]') ?><!-- Posts feed -->
     </div>
   </div>
 </main>
