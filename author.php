@@ -48,10 +48,10 @@ $author_name = get_author_name();
           <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
           <?php
           if(!empty($web2)) {
-                        echo '<a title="'.$web2.'" href="'.$web2.'" class="author-url">'.$web2.'</a>';
+                        echo '<br><a title="'.$web2.'" href="'.$web2.'" class="author-url">'.$web2.'</a>';
                       }
                       if(!empty($web3)) {
-                                    echo '<a title="'.$web3.'" href="'.$web3.'" class="author-url">'.$web3.'</a>';
+                                    echo '<br><a title="'.$web3.'" href="'.$web3.'" class="author-url">'.$web3.'</a>';
                                   }
                        ?>
           <!-- Author Page Header Social Icons -->
