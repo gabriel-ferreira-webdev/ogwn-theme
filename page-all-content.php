@@ -8,7 +8,7 @@
       </div>
 
       <!-- Posts feed -->
-        <?php echo do_shortcode('[ajax_load_more container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15"]'); ?>
+        <?php echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category__not_in="1"]'); ?>
     </div>  <!-- Container -->
   </div>  <!-- Section -->
 </main>
