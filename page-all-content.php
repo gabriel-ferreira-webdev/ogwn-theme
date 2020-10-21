@@ -8,17 +8,7 @@
       </div>
 
       <!-- Posts feed -->
-      <div class="feed-posts">
-        <ul>
-          <?php $catquery = new WP_Query( 'post_type=post&posts_per_page=12' ); ?>
-          <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
-          <?php $author_id = get_the_author_meta('ID'); ?>
-
-          <?php include("feed-post.php"); ?>
-        <?php endwhile;wp_reset_postdata();?>
-        </ul>
-      </div>    <!-- Posts feed -->
-
+        <?php echo do_shortcode('[ajax_load_more container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15"]'); ?>
     </div>  <!-- Container -->
   </div>  <!-- Section -->
 </main>
