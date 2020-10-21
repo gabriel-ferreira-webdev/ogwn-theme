@@ -4,22 +4,32 @@
 <div class="section section-gray">
 <div class="container" >
 
-<div class="section-header">
-    <h5><?php single_cat_title();?></h5>
-</div>
 
     <!-- Posts feed -->
-  <div class="feed-posts">
-    <ul>
-  <?php if (have_posts()) : while(have_posts()) : the_post();?>
-    <?php $author_id = get_the_author_meta('ID'); ?>
+<?php if(is_category()){
+   $cat = get_query_var('cat');
+   $category = get_category ($cat);
+   echo '<div class="section-header">
+       <h5>'.$category->cat_name.'</h5></div>';
 
-          <?php include("feed-post.php"); ?>
+   echo do_shortcode('[ajax_load_more transition_container="false" posts_per_page="15" category="'.$category->slug.'" cache="true" cache_id="cache-'.$category->slug.'"]');
+}
+if(is_tag()){
+   $tag = get_query_var('tag');
+   echo '<div class="section-header">
+       <h5>'.single_tag_title('',false).'</h5></div>';
+   echo do_shortcode('[ajax_load_more transition_container="false" posts_per_page="15" tag="'.$tag.'"]');
+}
+if(is_tax()){
+   echo '<div class="section-header">
+       <h5>'.$tax_name.'</h5></div>';
+   echo do_shortcode('[ajax_load_more transition_container="false" posts_per_page="15" taxonomy="'. $tax .'" taxonomy_terms="'. $tax_term .'" taxonomy_operator="IN"]');
+}
 
-  <?php endwhile; endif;?>
 
-</ul>
-</div>  <!-- posts feed -->
+
+?>
+ <!-- posts feed -->
 
 
 </div>  <!-- container -->

@@ -11,7 +11,7 @@
         <h5>NOW PLAYING:</h5>
       </div> -->
       <div class="iframe-container">
-        <iframe id="twitch-iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=ogwn.net&parent=ogwn.net" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
+        <iframe class="iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=ogwn.net&parent=ogwn.net" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
       </div>
       <!-- <div class="live-title">
       <a href="#">Now Playing:  What On Earth Is Happening</a>
