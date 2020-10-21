@@ -874,6 +874,9 @@ footer .container {
   top: -0.5rem;
 }
 
+.author-url{
+  display:block;
+}
 .author-url, #author-page-read-more, .author-page-header-desc {
   /*font-size: calc(14px + 6 * ((100vw - 320px) / 680));*/
   font-size: 1rem;

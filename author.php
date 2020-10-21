@@ -1,6 +1,9 @@
 <?php get_header();?>
 <?php
 $author_id = get_the_author_meta('ID');
+$emailcb  = get_the_author_meta('emailcb', $author_id);
+$web2  = get_the_author_meta('web2', $author_id);
+$web3  = get_the_author_meta('web3', $author_id);
 $twitter  = get_the_author_meta('twitter', $author_id);
 $facebook = get_the_author_meta('facebook', $author_id);
 $googleplus = get_the_author_meta('googleplus', $author_id);
@@ -43,10 +46,19 @@ $author_name = get_author_name();
           <div class="clr"></div>
 
           <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
+          <?php
+          if(!empty($web2)) {
+                        echo '<a title="'.$web2.'" href="'.$web2.'" class="author-url">'.$web2.'</a>';
+                      }
+                      if(!empty($web3)) {
+                                    echo '<a title="'.$web3.'" href="'.$web3.'" class="author-url">'.$web3.'</a>';
+                                  }
+                       ?>
           <!-- Author Page Header Social Icons -->
           <div class="author-page-header-social">
           <?php
-            if(!empty($email)) {
+
+            if(!empty($emailcb)) {
               echo '<a title="Contact '.$author_name.' via Email" href="mailto:'.$email.'" class="author-social"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a>';
             }
             if(!empty($instagram)) {
