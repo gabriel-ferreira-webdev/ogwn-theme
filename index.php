@@ -12,12 +12,9 @@
       </div> -->
       <div class="iframe-container">
         <iframe class="iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=onegreatworknetwork.com&parent=onegreatworknetwork.com" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
-<<<<<<< HEAD
-=======
       </div>
       <div class="live-title">
-      
->>>>>>> 3c4f5e1eae055964870953716e1f52f2eb1a5b7a
+
       </div>
   </div>
     <!-- Featured Content -->
