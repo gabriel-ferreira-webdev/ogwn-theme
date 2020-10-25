@@ -118,7 +118,7 @@ remove_filter('pre_user_description', 'wp_filter_kses');
 // Add user contact methods
 add_filter( 'user_contactmethods','wpse_user_contactmethods', 10, 1 );
 function wpse_user_contactmethods( $contact_methods ) {
-    $contact_methods['emailcb']  = __( 'Type something in here to display your email', 'text_domain' );
+    $contact_methods['emailcb']  = __( 'Display Email', 'checkbox' );
     $contact_methods['web2']  = __( 'Website 2', 'text_domain' );
     $contact_methods['web3']  = __( 'Website 3', 'text_domain' );
     $contact_methods['twitter']  = __( 'Twitter URL', 'text_domain' );
@@ -149,22 +149,22 @@ function my_login_logo() { ?>
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
-add_action('save_post', 'prevent_post_publishing', -1);
-function prevent_post_publishing($post_id)
-{
-    $post = get_post($post_id);
-
-    // You also add a post type verification here,
-    // like $post->post_type == 'your_custom_post_type'
-    if($post->post_status == 'publish' && !has_post_thumbnail($post_id)) {
-        $post->post_status = 'draft';
-        wp_update_post($post);
-
-        $message = '<p>Please, add a thumbnail!</p>'
-                 . '<p><a href="' . admin_url('post.php?post=' . $post_id . '&action=edit') . '">Go back and edit the post</a></p>';
-        wp_die($message, 'Error - Missing thumbnail!');
-    }
-}
+// add_action('save_post', 'prevent_post_publishing', -1);
+// function prevent_post_publishing($post_id)
+// {
+//     $post = get_post($post_id);
+//
+//     // You also add a post type verification here,
+//     // like $post->post_type == 'your_custom_post_type'
+//     if($post->post_status == 'publish' && !has_post_thumbnail($post_id)) {
+//         $post->post_status = 'draft';
+//         wp_update_post($post);
+//
+//         $message = '<p>Please, add a thumbnail!</p>'
+//                  . '<p><a href="' . admin_url('post.php?post=' . $post_id . '&action=edit') . '">Go back and edit the post</a></p>';
+//         wp_die($message, 'Error - Missing thumbnail!');
+//     }
+// }
 
 add_action( 'after_switch_theme', 'create_about_page_on_theme_activation' );
 function create_about_page_on_theme_activation(){

@@ -17,7 +17,7 @@ get_header();?>
 
           <?php
       // The Query
-      $user_query = new WP_User_Query( array( 'role' => 'content_creator' ) );
+      $user_query = new WP_User_Query( array( 'role' => 'content-creator' ) );
 
       // User Loop
       if ( ! empty( $user_query->get_results() ) ) {

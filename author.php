@@ -98,7 +98,8 @@ $author_name = get_author_name();
     <div class="container">
 
       <!-- Posts Feed -->
-          <?php echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" category__not_in="1"]');?>
+          <?php
+           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="' . $author_name->slug . '" tag__not_in="26" category__not_in="1"]');?>
 
     </div> <!-- Container Author Page Posts -->
   </div> <!-- Section Author Page Posts -->
