@@ -1,3 +1,5 @@
+<?php global $post;
+ $author_id= $post->post_author; ?>
 <li class="feed-post featured-post">
   <!-- post thumbnail -->
   <div class="feed-post-thumb">

@@ -1,4 +1,10 @@
-<?php get_header();?>
+<?php
+/*
+Template Name: All Content
+Template Post Type: page
+*/
+// Page code here..
+ get_header();?>
 
 <main>
   <div class="section section-gray">
@@ -8,17 +14,7 @@
       </div>
 
       <!-- Posts feed -->
-      <div class="feed-posts">
-        <ul>
-          <?php $catquery = new WP_Query( 'post_type=post&posts_per_page=12' ); ?>
-          <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
-          <?php $author_id = get_the_author_meta('ID'); ?>
-
-          <?php include("feed-post.php"); ?>
-        <?php endwhile;wp_reset_postdata();?>
-        </ul>
-      </div>    <!-- Posts feed -->
-
+        <?php echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" tag__not_in="26" category__not_in="1"]'); ?>
     </div>  <!-- Container -->
   </div>  <!-- Section -->
 </main>

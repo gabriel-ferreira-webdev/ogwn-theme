@@ -21,9 +21,7 @@
         <form action="/" method="get" id="searchform" class="header-searchform">
           <input type="checkbox" name="search-cb" id="search-cb" onclick="noScrollOnMenuOpen(this)" />
           <label id="search-cb-label" for="search-cb">
-            <div class="search-open">
-              <?php include("img/icons/search.svg"); ?>
-            </div>
+            <div class="search-open"></div>
           </label>
 
           <div class="search-bg-mb" id="search-bg-mb">
