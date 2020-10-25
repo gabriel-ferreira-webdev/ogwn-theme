@@ -197,10 +197,7 @@ function create_about_page_on_theme_activation(){
     }
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3c4f5e1eae055964870953716e1f52f2eb1a5b7a
 ?>
 
 
