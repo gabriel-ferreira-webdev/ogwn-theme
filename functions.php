@@ -18,6 +18,11 @@ add_action('wp_enqueue_scripts', 'include_jquery');
 function loadjs(){
   wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
   wp_enqueue_script('customjs');
+
+  // stores template url into a global variable that can be used in javascript
+  $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+  wp_localize_script( 'customjs', 'mainTheme', $translation_array );
+
 }
 add_action('wp_enqueue_scripts', 'loadjs');
 
@@ -192,6 +197,10 @@ function create_about_page_on_theme_activation(){
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c4f5e1eae055964870953716e1f52f2eb1a5b7a
 ?>
 
 
