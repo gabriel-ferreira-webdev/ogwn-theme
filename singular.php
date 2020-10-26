@@ -10,7 +10,7 @@
         <!-- Article Header -->
         <div class="article-header">
           <h2><?php the_title();?></h2>
-
+          <span> <?php the_category(","); ?> </span>
           <!-- Author Information Header -->
           <div class="article-header-author">
 
