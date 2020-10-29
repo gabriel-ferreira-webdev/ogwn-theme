@@ -14,7 +14,7 @@ $bitchute = get_the_author_meta('bitchute', $author_id);
 $lbry = get_the_author_meta('lbry', $author_id);
 $email = get_the_author_meta('email', $author_id);
 $author_url = get_the_author_meta('user_url', $author_id);
-$author_name = get_author_name();
+$author_name = get_the_author_meta('user_login');
 ?>
 
 <main id="author-page">
@@ -99,7 +99,7 @@ $author_name = get_author_name();
 
       <!-- Posts Feed -->
           <?php
-           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="' . $author_name->slug . '" tag__not_in="26" category__not_in="1"]');?>
+           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" cache="true" cache_id="cache-'.$author_name.'" tag__not_in="26"]');?>
 
     </div> <!-- Container Author Page Posts -->
   </div> <!-- Section Author Page Posts -->

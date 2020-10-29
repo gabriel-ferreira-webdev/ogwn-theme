@@ -98,7 +98,7 @@ function disable_authorbox_styles() {
 
  }
  add_action('wp_enqueue_scripts', 'disable_authorbox_styles');
- 
+
 // display only posts on search query
 function search_filter($query) {
   if ( ! is_admin() && $query->is_main_query() ) {
@@ -139,6 +139,22 @@ function wpse_user_contactmethods( $contact_methods ) {
     return $contact_methods;
 }
 
+add_action( 'user_new_form', 'wporg_myplugin_add_registration_fields' );
+
+function wporg_myplugin_add_registration_fields() {
+
+
+    // Get and set any values already sent
+    $user_extra = ( isset( $_POST['user_extra'] ) ) ? $_POST['user_extra'] : '';
+    ?>
+
+    <p>
+        <label for="user_extra"><?php _e( 'Extra Field', 'myplugin_textdomain' ) ?><br />
+        <input type="text" name="user_extra" id="user_extra" class="input" value="<?php echo esc_attr( stripslashes( $user_extra ) ); ?>" size="25" /></label>
+    </p>
+
+    <?php
+}
 
 // custom login Logo
 function my_login_logo() { ?>

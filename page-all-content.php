@@ -14,7 +14,8 @@ Template Post Type: page
       </div>
 
       <!-- Posts feed -->
-        <?php echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" tag__not_in="26" category__not_in="1"]'); ?>
+
+        <?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load more" transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" tag__not_in="26" category__not_in="1"]'); ?>
     </div>  <!-- Container -->
   </div>  <!-- Section -->
 </main>
