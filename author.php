@@ -1,6 +1,7 @@
 <?php get_header();?>
 <?php
-$author_id = get_the_author_meta('ID');
+$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
+$author_id = $author->ID;
 $emailcb  = get_the_author_meta('emailcb', $author_id);
 $web2  = get_the_author_meta('web2', $author_id);
 $web3  = get_the_author_meta('web3', $author_id);
@@ -13,8 +14,8 @@ $youtube = get_the_author_meta('youtube', $author_id);
 $bitchute = get_the_author_meta('bitchute', $author_id);
 $lbry = get_the_author_meta('lbry', $author_id);
 $email = get_the_author_meta('email', $author_id);
-$author_url = get_the_author_meta('user_url', $author_id);
-$author_name = get_the_author_meta('user_login');
+$author_url = $author->user_url;
+$author_name = $author->user_login;
 ?>
 
 <main id="author-page">
@@ -26,16 +27,16 @@ $author_name = get_the_author_meta('user_login');
         <div class="author-page-header-profile">
           <?php echo get_avatar($author_id, 300); ?>
           <nav class="author-donate">
-            <a href="donate">DONATE TO<br><?php the_author();?></a>
+            <a href="donate">DONATE TO<br><?php echo $author->display_name;?></a>
           </nav>
         </div>
 
         <!-- Author Page Header Bio -->
         <div class="author-page-header-side">
-          <h2><?php the_author(); ?></h2>
+          <h2><?php echo $author->display_name; ?></h2>
 
           <div id="more-less" class="author-page-header-desc">
-            <?php the_author_description(); ?>
+            <?php echo $author->user_description; ?>
           </div>
 
           <div class="float-right">
@@ -98,8 +99,10 @@ $author_name = get_the_author_meta('user_login');
     <div class="container">
 
       <!-- Posts Feed -->
-          <?php
-           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" cache="true" cache_id="cache-'.$author_name.'" tag__not_in="26"]');?>
+          <?php if ( have_posts() ){
+           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" cache="true" cache_id="cache-'.$author_name.'" tag__not_in="26"]');
+                    }
+           ?>
 
     </div> <!-- Container Author Page Posts -->
   </div> <!-- Section Author Page Posts -->
