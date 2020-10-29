@@ -39,11 +39,11 @@ $author_name = $author->user_login;
             <?php echo $author->user_description; ?>
           </div>
 
-          <div class="float-right">
+
             <button title="Read more/less" type="button" class="link-button" onclick="readMoreToggle()" id="button-more">
               Read more
             </button>
-          </div>
+
           <div class="clr"></div>
 
           <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
@@ -101,7 +101,9 @@ $author_name = $author->user_login;
       <!-- Posts Feed -->
           <?php if ( have_posts() ){
            echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" cache="true" cache_id="cache-'.$author_name.'" tag__not_in="26"]');
-                    }
+         }else{
+           echo "No posts yet!";
+         }
            ?>
 
     </div> <!-- Container Author Page Posts -->

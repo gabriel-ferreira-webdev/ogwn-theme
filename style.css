@@ -105,7 +105,7 @@ blockquote::after {
 }
 
 main .container {
-  width: calc(100% - 3rem);
+  width: calc(100% - .5rem);
   margin: auto;
 }
 
@@ -194,7 +194,9 @@ a:link, a:visited {
   text-decoration: none;
   color: #eee;
 }
-
+#hamitems a:hover, .search-open:hover, #search-button:hover{
+  opacity:0.75;
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -216,7 +218,7 @@ header {
 }
 
 header .container {
-  width: calc(100% - 3rem);
+  width: calc(100% - .5rem);
   margin: 0 auto;
 }
 
@@ -369,6 +371,7 @@ height: 24px;
 /*	5. Mobile Menu
 /* -------------------------------------------------------------------------- */
 @media (max-width:1599px) {
+
   .container, .reading-container, .reading-container-shadow, .reading-container-light {
     font-size: 1rem;
     font-family: "sourceSansPro";
@@ -376,7 +379,8 @@ height: 24px;
   }
 
   .reading-container, .reading-container-shadow, .reading-container-light {
-    padding: 0 2rem;
+    width:calc(100% - .5rem);
+    margin:0 auto;
     font-family: "sourceSansPro";
     font-weight: 300;
   }
@@ -417,8 +421,8 @@ height: 24px;
     position: absolute;
     /*left:0;*/
     /*top:0;*/
-    top: -6px;
-    right: -23px;
+    top: -15px;
+    right: -4px;
     /*z-index: 99;*/
     /*height:100%;*/
     /*min-width:75%;*/
@@ -541,7 +545,7 @@ height: 24px;
 
 /* FRONT PAGE PLAYER AND FEATURED VIDEOS */
 #livefeed-featured-section {
-  padding: 24px 0 60px 0;
+  padding: 24px 0 24px 0;
 }
 
 #featured-container {
@@ -650,7 +654,7 @@ display:block;
 }
 .feed-post-title {
   display: -webkit-box;
-  -webkit-line-clamp:1;
+  -webkit-line-clamp:2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -717,7 +721,7 @@ display:block;
 .author-list a{
   display:block;
   text-align: center;
-    font-size: 2rem;
+    font-size:1.5rem;
 }
 .author-list a:link, .author-list a:visited {
   font-family: "sourceSansPro-SemiBold";
@@ -737,8 +741,7 @@ display:block;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 60px;
+  margin:24px 0 12px 0;
 }
 .avatar {
   height: auto;
@@ -831,6 +834,7 @@ footer .container {
   -moz-columns: 75px 2;
   /* Firefox */
   columns: 75px 2;
+  padding:0;
 }
 
 #menu-footer-menu a:link {
@@ -916,7 +920,7 @@ footer .container {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: left;
+  text-align: center;
   font-family: "sourceSansPro";
   font-weight: 300;
 }
@@ -925,7 +929,6 @@ footer .container {
   max-height: none;
   overflow: visible;
   display: block;
-  text-align: left;
   margin: 0.8rem 0;
   line-height: 1.4rem;
   font-family: "sourceSansPro";
@@ -1057,6 +1060,8 @@ footer .container {
 /* YOUTUBE */
   .wp-block-embed,.wp-block-embed.alignleft, .wp-block-embed.alignright, .wp-block[data-align="left"]>[data-type^="core-embed"], .wp-block[data-align="right"]>[data-type^="core-embed"],.iframe-container{
   max-width: 100%;
+  width:100%;
+  margin:0 auto;
 }
 /* IFRAMES */
 .iframe-container {
@@ -1089,11 +1094,6 @@ width:100%;
 /* -------------------------------------------------------------------------- */
 /*	11. Media Queries
   /* -------------------------------------------------------------------------- */
-@media (min-width:375px) {
-.feed-post-title {
--webkit-line-clamp: 2;
-}
-}
 @media (min-width:590px) {
   .feed-post-info{
     max-height:none;
@@ -1149,7 +1149,12 @@ width:100%;
   .author-page-header h2 {
     margin: 0;
   }
-
+  .author-page-header-desc{
+    text-align: left;
+  }
+#button-more{
+float:right;
+}
   .author-page-header-social {
     margin-top: 0;
   }
@@ -1228,7 +1233,9 @@ width:100%;
 
   /* HEADER DESKTOP */
 
-
+  header .container, main .container{
+    width:calc(100% - 3rem);
+  }
 
   .custom-logo-link {
     width: auto;
@@ -1367,7 +1374,9 @@ width:100%;
   .author-list .user {
     width: 300px;
   }
-
+  .author-list a{
+      font-size:2rem;
+  }
   /* FOOTER DESKTOP */
   #back-top {
     /*font-size: calc(5px + 6 * ((100vw - 320px) / 680));*/
