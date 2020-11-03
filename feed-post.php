@@ -1,6 +1,6 @@
 <?php global $post;
  $author_id= $post->post_author; ?>
-<li class="feed-post featured-post">
+<article class="feed-post featured-post">
   <!-- post thumbnail -->
   <div class="feed-post-thumb">
     <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
@@ -21,4 +21,4 @@
 
   <!-- </div> -->
 
-</li>
+</article>

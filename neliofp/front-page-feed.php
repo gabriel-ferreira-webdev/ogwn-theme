@@ -10,7 +10,7 @@ global $post;
 <!-- Featured Posts feed -->
 <!-- <div class="feed-posts featured-posts">
   <ul> -->
-      <nav class="feed-post featured-post">
+      <article class="feed-post featured-post">
         <!-- post thumbnail -->
         <div class="feed-post-thumb featured-post-thumb">
           <a href="<?php the_permalink() ?>" rel="bookmark" class="feed-post-thumb-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);"></a>
@@ -31,7 +31,7 @@ global $post;
 
         <!-- </div> -->
 
-      </nav>
+      </article>
 <!--
   </ul>
 </div> -->
