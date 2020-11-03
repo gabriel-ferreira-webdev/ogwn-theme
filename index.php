@@ -2,7 +2,7 @@
 
 <main  role=”main”>
 
-  <div class="section section-gray" id="livefeed-featured-section">
+  <section class="section section-gray" id="livefeed-featured-section">
     <div id="livefeed-featured" class="container">
       <!-- Twitch player -->
       <div class="live-player-container">
@@ -30,10 +30,10 @@ $site_url_trim = substr($site_url,8);
 
 
 </div>  <!-- livefeed-featured container -->
-</div>  <!-- livefeed-featured section -->
+</section>  <!-- livefeed-featured section -->
 
     <!-- Content Creators -->
-<div class="section" id="content-creators-section">
+<section class="section" id="content-creators-section">
   <div class="container">
 
     <div class="section-header">
@@ -71,7 +71,7 @@ if ( ! empty( $user_query->get_results() ) ) {
 </div>  <!-- end author list -->
 
 </div> <!-- end container -->
-</div> <!-- end section -->
+</section> <!-- end section -->
 
 </main>
 

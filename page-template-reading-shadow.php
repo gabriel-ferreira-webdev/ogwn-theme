@@ -7,7 +7,7 @@ Template Post Type: page
  get_header();?>
 
 <main>
-  <div class="section section-gray">
+  <section class="section section-gray">
     <div class="reading-container-shadow">
       <div class="section-header">
         <h5><?php the_title();?></h5>
@@ -18,7 +18,7 @@ Template Post Type: page
       <?php endwhile; endif;?>
 
     </div>
-  </div>
+  </section>
 </main>
 
 <?php get_footer();?>

@@ -19,7 +19,7 @@ $author_name = $author->user_login;
 ?>
 
 <main id="author-page">
-  <div class="author-page-header section">
+  <section class="author-page-header section">
     <div class="author-container">
       <div class="container">
 
@@ -93,9 +93,9 @@ $author_name = $author->user_login;
 
       </div> <!-- Container Author Page Header-->
     </div>
-  </div> <!-- Section Author Page Header-->
+  </section> <!-- Section Author Page Header-->
 
-  <div class="section author-page-posts">
+  <section class="section author-page-posts">
     <div class="container">
 
       <!-- Posts Feed -->
@@ -107,7 +107,7 @@ $author_name = $author->user_login;
            ?>
 
     </div> <!-- Container Author Page Posts -->
-  </div> <!-- Section Author Page Posts -->
+  </section> <!-- Section Author Page Posts -->
 </main>
 <script>
   window.onload = () => {

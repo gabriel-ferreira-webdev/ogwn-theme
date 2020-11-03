@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 <main>
-  <div class="section section-gray">
+  <section class="section section-gray">
     <div class="reading-container-shadow">
 
       <?php if (have_posts()) : while(have_posts()) : the_post();?>
@@ -33,7 +33,7 @@
         </div>
       <?php endwhile; endif;?>
     </div>
-  </div> <!-- Section -->
+  </section> <!-- Section -->
 </main>
 
 <?php get_footer();?>

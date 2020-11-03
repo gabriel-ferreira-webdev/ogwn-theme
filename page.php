@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 <main>
-  <div class="section section-gray">
+  <section class="section section-gray">
     <div class="container">
       <div class="section-header">
         <h5><?php the_title();?></h5>
@@ -12,7 +12,7 @@
       <?php endwhile; endif;?>
 
     </div>
-  </div>
+  </section>
 </main>
 
 <?php get_footer();?>

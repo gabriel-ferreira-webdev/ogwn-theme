@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 <main>
-<div class="section section-gray">
+<section class="section section-gray">
 <div class="container" >
 
 
@@ -33,7 +33,7 @@ if(is_tax()){
 
 
 </div>  <!-- container -->
-</div>  <!-- section -->
+</section>  <!-- section -->
 </main>
 
 <?php get_footer();?>
