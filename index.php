@@ -6,10 +6,7 @@
     <div id="livefeed-featured" class="container">
       <!-- Twitch player -->
       <div class="live-player-container">
-        <!-- <div class="section-header" id="header-live">
-        <figure id="live-dot"></figure>
-        <h5>NOW PLAYING:</h5>
-      </div> -->
+      <!-- Gets and trims website url for twitch iframe &parent -->
 <?php
 $site_url = get_site_url();
 $site_url_trim = substr($site_url,8);
@@ -18,7 +15,6 @@ $site_url_trim = substr($site_url,8);
         <iframe class="iframe" src="https://player.twitch.tv/?channel=onegreatworknetwork&parent=<?php echo $site_url_trim; ?>&parent=<?php echo $site_url_trim; ?>" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="300px"></iframe>
       </div>
       <div class="live-title">
-
       </div>
   </div>
     <!-- Featured Content -->
@@ -72,10 +68,10 @@ if ( ! empty( $user_query->get_results() ) ) {
 }
 ?>
 
-</div>
+</div>  <!-- end author list -->
 
-  </div>
-</div>
+</div> <!-- end container -->
+</div> <!-- end section -->
 
 </main>
 

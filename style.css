@@ -59,33 +59,6 @@ p {
   font-weight: 100;
 }
 
-/*h1,
-h2,
-h3,
-h4,
-h5,
-h6,*/
-/*p,
-blockquote,
-address,
-big,
-cite,
-code,
-em,
-font,
-img,
-small,
-strike,
-sub,
-sup,
-li,
-ol,
-ul,
-fieldset,
-form,
-label,
-legend,
-button,*/
 table,
 caption,
 tr,
@@ -104,56 +77,10 @@ blockquote::after {
   content: "";
 }
 
-main .container {
-  width: calc(100% - .5rem);
-  margin: auto;
-}
 
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.clr {
-  clear: both;
-}
-
-.link-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-.link-button:hover {
-  opacity: 0.8;
-}
-
-.link-button:focus {
-  outline: none;
-  opacity: 1;
-}
-
-.aligncenter {
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* -------------------------------------------------------------------------- */
-/*	1. Hamburguer Menu
-    based on https://code-boxx.com/simple-responsive-pure-css-hamburger-menu/
-*/
-/* -------------------------------------------------------------------------- */
-
-/* -------------------------------------------------------------------------- */
-/*	2. Document Setup
+/*	1. Document Setup
     /* -------------------------------------------------------------------------- */
 @font-face {
   font-family: "arvo";
@@ -200,14 +127,7 @@ a:link, a:visited {
 
 
 /* -------------------------------------------------------------------------- */
-/*	3. Helper Classes
-/* -------------------------------------------------------------------------- */
-/*.container {
-  margin: auto;
-  width: calc(100% - 12px);
-}*/
-/* -------------------------------------------------------------------------- */
-/*	4. Site Header
+/*	2. Site Header
 /* -------------------------------------------------------------------------- */
 header {
   background: #100f26;
@@ -224,7 +144,6 @@ header .container {
 
 header a:link, header a:visited {
   color: White;
-  /*font-size: calc(9px + 6 * ((100vw - 320px) / 680));*/
   font-family: "sourceSansPro-SemiBold";
   font-size: 1.3rem;
 }
@@ -239,15 +158,11 @@ header a:link, header a:visited {
 }
 
 .custom-logo-link {
-  /*width: 6%;*/
-  /*min-width: 42px;*/
   max-height: 66px;
   display: inline-block;
 }
 
 .custom-logo {
-  /*height: 100%;
-  width: 100%;*/
   max-height: 66px;
   max-width: 66px;
   display: block;
@@ -284,11 +199,6 @@ header a:link, header a:visited {
 .header-searchform input[type=checkbox]:checked~#search-cb-label .search-open {
 background-image:url("img/icons/close.png")
 }
-/* .header-searchform input[type=checkbox]:checked ~ #search{
-  display:inline-block;
-  transition:.2s;
-  width:100%;
-} */
 #search-button {
   vertical-align: top;
   margin-top: 0.1rem;
@@ -300,7 +210,6 @@ background-image:url("img/icons/close.png")
 #hamnav {
   position: sticky;
   top: 0;
-  /*width: 100%;*/
 }
 
 /* Hide Hamburger */
@@ -312,7 +221,6 @@ background-image:url("img/icons/close.png")
 /* Horizontal Menu Items */
 #hamitems {
   display: flex;
-  /*display: block;*/
 }
 
 .search-open {
@@ -368,7 +276,7 @@ height: 24px;
 
 
 /* -------------------------------------------------------------------------- */
-/*	5. Mobile Menu
+/*	3. Mobile Menu
 /* -------------------------------------------------------------------------- */
 @media (max-width:1599px) {
 
@@ -419,13 +327,8 @@ height: 24px;
   #hamitems {
     display: none;
     position: absolute;
-    /*left:0;*/
-    /*top:0;*/
     top: -15px;
     right: -4px;
-    /*z-index: 99;*/
-    /*height:100%;*/
-    /*min-width:75%;*/
     width: 275px;
     background: #1e1c44;
     height: 100vh;
@@ -501,8 +404,50 @@ height: 24px;
 }
 
 /* -------------------------------------------------------------------------- */
-/*	6. Template
+/*	4. Template
 /* -------------------------------------------------------------------------- */
+main .container {
+  width: calc(100% - .5rem);
+  margin: auto;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clr {
+  clear: both;
+}
+
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.link-button:hover {
+  opacity: 0.8;
+}
+
+.link-button:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.aligncenter {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section {
   padding: 6px 0 24px 0;
 
@@ -578,7 +523,6 @@ height: 24px;
 .live-title {
   padding: 3px 0;
   text-align: left;
-  /*font-size: calc(22px + 6 * ((100vw - 320px) / 680));*/
   font-size: 22px;
   font-family: "sourceSansPro-SemiBold";
 }
@@ -686,12 +630,7 @@ display:block;
   text-overflow: ellipsis;
 }
 
-.feed-category {
-  /*display: inline;
-  color: white;*/
-  /*padding: 12px 1em 12px 0;*/
-  /*margin-bottom: 0.3rem;*/
-}
+
 
 
 
@@ -728,7 +667,6 @@ display:block;
 
 .container .shortcode-author-avatars .author-list .user .name {
   margin: 12px 0 24px 0;
-  /*font-size: calc(18px + 6 * ((100vw - 320px) / 680));*/
 }
 
 .author-list {
@@ -782,23 +720,9 @@ display:block;
 }
 
 /* -------------------------------------------------------------------------- */
-/*	7. Site Footer
+/*	5. Site Footer
 /* -------------------------------------------------------------------------- */
-/* repositions wordpress back-end menu on desktop (sticky footer) */
-/* #wpadminbar{
-  top:-46px;
-} */
-/* sticky-footer */
-/* body,html{
-  height:calc(100% - 46px);
-}
-.page-wrap{
-  position: relative;
-  min-height:calc(100% - 574px);
-  padding-bottom:750px;
-  background:#282727;
-  margin:0;
-} */
+
 footer {
   border-top: 1px solid gray;
   /* position: absolute;
@@ -836,7 +760,6 @@ footer .container {
 
 #menu-footer-menu a:link {
     font-family: "sourceSansPro-SemiBold";
-  /*font-size: calc(18px + 6 * ((100vw - 320px) / 680));*/
   font-size: 1.25rem;
   text-transform: uppercase;
 }
@@ -853,13 +776,9 @@ footer .container {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	8. Author Page
+/*	6. Author Page
 /* -------------------------------------------------------------------------- */
 /* AUTHOR PAGE INFORMATION  */
-#author-page .section {
-  /*padding-top: 0;*/
-}
-
 .author-page-header {
   background-image: linear-gradient(#383e76, #151739 90%);
   border-bottom: 1px solid gray;
@@ -870,7 +789,6 @@ footer .container {
 .author-page-header-profile .avatar {
   border: 3px solid white;
   margin-top: 10px;
-  /*width: 50%;*/
   height: auto;
 }
 
@@ -884,7 +802,6 @@ footer .container {
   width: 100%;
   padding: 12px 0;
   margin: 7px 0 0;
-  /*font-size: calc(16px + 6 * ((100vw - 320px) / 680));*/
   font-size: 16px;
   font-family: Rubik, "sourceSansPro";
   font-weight: 300;
@@ -902,7 +819,6 @@ footer .container {
 
 .author-page-header h2 {
   margin: 24px 0 0;
-  /*font-size: calc(24px + 6 * ((100vw - 320px) / 680));*/
   font-size: 24px;
   font-family: Rubik, "sourceSansPro-Italic";
   font-weight: 200;
@@ -949,7 +865,6 @@ footer .container {
 
 
 .author-url, #author-page-read-more, .author-page-header-desc {
-  /*font-size: calc(14px + 6 * ((100vw - 320px) / 680));*/
   font-size: 1rem;
   font-family: "sourceSansPro";
   font-weight: 300;
@@ -979,12 +894,10 @@ footer .container {
 
 .author-page-posts {
   background-image: linear-gradient(#0c0c0c, #212121 2%, #212121 97%, #0c0c0c 100%);
-  /*position: relative;
-  top: -10px;*/
 }
 
 /* -------------------------------------------------------------------------- */
-/*	9. Post: Archive
+/*	7. Post: Archive
   /* -------------------------------------------------------------------------- */
 .article-archive-container {
   width: 100%;
@@ -992,7 +905,7 @@ footer .container {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	10. Single Post
+/*	8. Single Post
   /* -------------------------------------------------------------------------- */
 /* ARTICLE HEADER */
 .article-header {
@@ -1016,8 +929,6 @@ footer .container {
   margin:0;
   font-family: "arvo";
   font-weight: 300;
-  /*font-size: calc(24px + 6 * ((100vw - 320px) / 680));*/
-  /*font-size: 24px;*/
 }
 
 .article-header-info {
@@ -1033,14 +944,11 @@ footer .container {
 .article-header-info h3 {
   font-family: Rubik, "sourceSansPro-Italic";
   font-weight: 200;
-  /*font-size: calc(20px + 6 * ((100vw - 320px) / 680));*/
-  /*font-size: 20px;*/
   margin: 0;
 }
 
 .article-date {
   font-family: "sourceSansPro-LightItalic";
-  /*font-size: calc(14px + 6 * ((100vw - 320px) / 680));*/
   color: #ffffff;
   position: absolute;
   bottom: 0;
@@ -1074,22 +982,8 @@ footer .container {
   width:100%;
   height:100%;
 }
-/* #lbry-iframe{
-  position: relative;
-padding-bottom: 56.25%;
-height: 0;
-width:100%;
-}
-#lbry-iframe body{
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-} */
 /* -------------------------------------------------------------------------- */
-/*	11. Media Queries
+/*	9. Media Queries
   /* -------------------------------------------------------------------------- */
 @media (min-width:590px) {
   .feed-post-info{
@@ -1127,17 +1021,14 @@ width:100%;
   }
 
   .author-page-header-profile {
-    /*width: 300px;*/
     padding-top: 0.5rem;
   }
 
   .author-page-header-profile .avatar {
-    /*width: 100%;*/
     width: 150px;
   }
 
   .author-page-header-side {
-    /*width: 85%;*/
     text-align: left;
     margin-left: 1.5rem;
     padding-top: 0.5rem;
@@ -1171,10 +1062,6 @@ float:right;
   /* FRONT PAGE */
   /* AUTHOR PAGE */
   /* AUTHOR PAGE INFORMATION */
-  .author-url, #author-page-read-more, .author-page-header-desc {
-    /*font-size: calc(5px + 6 * ((100vw - 320px) / 680));*/
-  }
-
   .author-social svg {
     width: 24px;
     height: 24px;
@@ -1238,11 +1125,6 @@ float:right;
     width: auto;
     max-height: 66px;
     display: inline-block;
-  }
-
-  .custom-logo {
-    /*width: 80px;
-    margin: 0;*/
   }
 
   .title-img {
@@ -1334,7 +1216,6 @@ float:right;
     font-size: 1.1rem;
     padding: 0.2rem;
     transition: .2s;
-    /* width: calc(100% - 60px); */
   }
 
   #searchform {
@@ -1376,18 +1257,12 @@ float:right;
   }
   /* FOOTER DESKTOP */
   #back-top {
-    /*font-size: calc(5px + 6 * ((100vw - 320px) / 680));*/
     font-size: 5px;
     bottom: 24px;
   }
 
   /* sticky-footer */
-  /* .page-wrap{
-      min-height:calc(100% - 240px);
-      padding-bottom:300px;
-    } */
   footer .container {
-    /*padding: 25px 0;*/
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -1419,10 +1294,6 @@ float:right;
     text-align: left;
   }
 
-  #menu-footer-menu li a:link {
-    /*font-size: calc(6px + 6 * ((100vw - 320px) / 680));*/
-  }
-
   .footer-logo {
     background-position: center;
     padding: 0;
@@ -1433,13 +1304,6 @@ float:right;
   }
 
   /* ARTICLE / SINGLE POST DESKTOP */
-  .article-header-info h3 {
-    /*font-size: calc(12px + 6 * ((100vw - 320px) / 680));*/
-  }
-
-  .article-date {
-    /*font-size: calc(6px + 6 * ((100vw - 320px) / 680));*/
-  }
 
   /* EMBEDS */
   /* YOUTUBE */
@@ -1527,16 +1391,6 @@ float:right;
   /* HEADER 5K */
   header {
     padding: 12px 0;
-  }
-
-  /*.custom-logo-link {
-    height: 160px;
-    width: 160px;
-  }*/
-  .custom-logo {
-    /*width: 100%;
-    height: auto;
-    margin: 0;*/
   }
 
   .menu-top-menu-container {
