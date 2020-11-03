@@ -597,9 +597,6 @@ height: 24px;
   margin:0;
   padding:0;
 }
-.alm-load-more-btn{
-  display:none;
-}
 .feed-posts{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(275px,1fr));
