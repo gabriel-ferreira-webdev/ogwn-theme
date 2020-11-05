@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 
-<section class="section section-gray section-about">
+<div class="section background-gray section-about">
   <div class="container">
 
     <div class="section-header">
@@ -17,7 +17,7 @@
 
 
   </div>
-</section>
+</div>
 
 
 <?php get_footer();?>

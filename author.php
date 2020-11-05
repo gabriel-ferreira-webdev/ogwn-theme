@@ -1,7 +1,6 @@
 <?php get_header();?>
 <?php
-$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
-$author_id = $author->ID;
+$author_id = get_the_author_meta('ID');
 $emailcb  = get_the_author_meta('emailcb', $author_id);
 $web2  = get_the_author_meta('web2', $author_id);
 $web3  = get_the_author_meta('web3', $author_id);
@@ -14,12 +13,12 @@ $youtube = get_the_author_meta('youtube', $author_id);
 $bitchute = get_the_author_meta('bitchute', $author_id);
 $lbry = get_the_author_meta('lbry', $author_id);
 $email = get_the_author_meta('email', $author_id);
-$author_url = $author->user_url;
-$author_name = $author->user_login;
+$author_url = get_the_author_meta('user_url', $author_id);
+$author_name = get_author_name();
 ?>
 
 <main id="author-page">
-  <section class="author-page-header section">
+  <div class="author-page-header section">
     <div class="author-container">
       <div class="container">
 
@@ -27,23 +26,23 @@ $author_name = $author->user_login;
         <div class="author-page-header-profile">
           <?php echo get_avatar($author_id, 300); ?>
           <nav class="author-donate">
-            <a href="donate">DONATE TO<br><?php echo $author->display_name;?></a>
+            <a href="donate">DONATE TO<br><?php the_author();?></a>
           </nav>
         </div>
 
         <!-- Author Page Header Bio -->
         <div class="author-page-header-side">
-          <h2><?php echo $author->display_name; ?></h2>
+          <h2><?php the_author(); ?></h2>
 
           <div id="more-less" class="author-page-header-desc">
-            <?php echo $author->user_description; ?>
+            <?php the_author_description(); ?>
           </div>
 
-
+          <div class="float-right">
             <button title="Read more/less" type="button" class="link-button" onclick="readMoreToggle()" id="button-more">
               Read more
             </button>
-
+          </div>
           <div class="clr"></div>
 
           <a class="author-url" href="<?php  echo $author_url ?>"><?php  echo $author_url ?></a>
@@ -81,7 +80,7 @@ $author_name = $author->user_login;
               echo '<a title="Follow '.$author_name.' on Facebook" href="'.$facebook.'" class="author-social"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>';
             }
             if(!empty($bitchute)) {
-              echo '<a title="Follow '.$author_name.' on BitChute" href="'.$bitchute.'" class="author-social"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 493.88 501"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="bitchute" data-name="bitchute"><path class="cls-1" d="M246.94,0C-82.34,5.62-82.29,495.43,247,501,576.22,495.38,576.17,5.57,246.94,0Zm-165,250.5C77.44,114.9,249.55,34.86,350.66,122.19L292.22,169.1c-69.58-41.52-160.19,30.69-134.56,108L99.21,324A164.21,164.21,0,0,1,81.94,250.5Zm165,165A165,165,0,0,1,99.55,324.72L172,305.84c45.23,66.87,160.49,37.53,167.33-43.59l72.43-18.87C416,336.88,340.55,415.75,246.94,415.5Z"></path></g></g></g></svg></a>';
+              echo '<a title="Follow '.$author_name.' on BitChute" href="'.$bitchute.'" class="author-social"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>';
             }
             if(!empty($lbry)) {
               echo '<a title="Follow '.$author_name.' on LBRY" href="'.$lbry.'" class="author-social"><svg stroke="currentColor" fill="currentColor" x="0px" y="0px" viewBox="0 0 322 254" class="icon lbry-icon"><path d="M296,85.9V100l-138.8,85.3L52.6,134l0.2-7.9l104,51.2L289,96.1v-5.8L164.2,30.1L25,116.2v38.5l131.8,65.2 l137.6-84.4l3.9,6l-141.1,86.4L18.1,159.1v-46.8l145.8-90.2C163.9,22.1,296,85.9,296,85.9z"></path><path d="M294.3,150.9l2-12.6l-12.2-2.1l0.8-4.9l17.1,2.9l-2.8,17.5L294.3,150.9L294.3,150.9z"></path></svg></a>';
@@ -93,21 +92,17 @@ $author_name = $author->user_login;
 
       </div> <!-- Container Author Page Header-->
     </div>
-  </section> <!-- Section Author Page Header-->
+  </div> <!-- Section Author Page Header-->
 
-  <section class="section author-page-posts">
+  <div class="section author-page-posts">
     <div class="container">
 
       <!-- Posts Feed -->
-          <?php if ( have_posts() ){
-           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="'.$author_name.'" cache="true" cache_id="cache-'.$author_name.'" tag__not_in="26"]');
-         }else{
-           echo "No posts yet!";
-         }
-           ?>
+          <?php
+           echo do_shortcode('[ajax_load_more transition_container="false" container_type="div" css_classes="feed-posts" post_type="post" posts_per_page="15" category="' . $author_name->slug . '" tag__not_in="26" category__not_in="1"]');?>
 
     </div> <!-- Container Author Page Posts -->
-  </section> <!-- Section Author Page Posts -->
+  </div> <!-- Section Author Page Posts -->
 </main>
 <script>
   window.onload = () => {

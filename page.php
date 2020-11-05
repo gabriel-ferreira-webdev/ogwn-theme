@@ -1,18 +1,53 @@
-<?php get_header();?>
+<?php
+/**
+ * The page template for displaying all pages.
+ *
+ * This file determines the default page template design and structure.
+ *
+ * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/
+ *
+ */
+?>
 
-<main>
-  <section class="section section-gray">
-    <div class="container">
-      <div class="section-header">
-        <h5><?php the_title();?></h5>
-      </div>
+<?php get_header(); // Loads header template. ?>
 
-      <?php if (have_posts()) : while(have_posts()) : the_post();?>
-        <?php the_content();?>
-      <?php endwhile; endif;?>
 
-    </div>
-  </section>
-</main>
+  <!-- Main Section
+  ============================================= -->
+  <main class="site-main">
 
-<?php get_footer();?>
+
+    <!-- Page Section (Container)
+    ============================================= -->
+    <section class="section background-gray">
+      <div class="reading-container-shadow">
+
+        <!-- Page Title -->
+        <h5 class="section-header"><?php the_title(); // Displays the title of the page. ?></h5>
+
+
+        <!-- The Loop
+        ============================================= -->
+        <?php
+        // The Loop - while any pages are available, display them.
+        while ( have_posts() ) :
+          the_post(); ?>
+
+
+        <!-- Page Content
+        ============================================= -->
+        <article class="article-content">
+          <?php the_content(); // Displays the page content. ?>
+        </article>
+
+
+        <?php endwhile; // End of the loop. ?>
+
+
+      </div><!-- .reading-container-shadow -->
+    </section><!-- .section -->
+
+
+  </main><!-- .site-main -->
+
+<?php get_footer(); // Loads footer template. ?>
